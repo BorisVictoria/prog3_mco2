@@ -1,32 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Line?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.prog3_mco2.createController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.prog3_mco2.createController">
     <children>
-        <Label layoutX="109.0" layoutY="112.0" text="Create Vending Machine" textAlignment="CENTER">
+        <Label layoutX="110.0" layoutY="64.0" text="Create Vending Machine" textAlignment="CENTER">
             <font>
                 <Font name="Segoe UI Semilight" size="36.0" />
             </font>
         </Label>
-        <Button layoutX="175.0" layoutY="213.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="251.0" text="Create Regular Vending Machine" textAlignment="CENTER">
+        <Button layoutX="139.0" layoutY="157.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="321.0" text="Create Regular Vending Machine (Preset)" textAlignment="CENTER">
          <font>
             <Font name="Segoe UI Semilight" size="16.0" />
          </font></Button>
-        <Button layoutX="175.0" layoutY="262.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="251.0" text="Create Special Vending Machine" textAlignment="CENTER">
+        <Button layoutX="139.0" layoutY="303.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="321.0" text="Create Special Vending Machine (Custom)" textAlignment="CENTER">
          <font>
             <Font name="Segoe UI Semilight" size="16.0" />
          </font></Button>
-        <Button layoutX="175.0" layoutY="313.0" mnemonicParsing="false" onAction="#exit" prefHeight="39.0" prefWidth="251.0" text="Exit" textAlignment="CENTER">
+        <Button layoutX="138.0" layoutY="353.0" mnemonicParsing="false" onAction="#exit" prefHeight="39.0" prefWidth="327.0" text="Exit" textAlignment="CENTER">
          <font>
             <Font name="Segoe UI Semilight" size="16.0" />
          </font></Button>
-      <Line endX="300.0" layoutX="217.0" layoutY="102.0" startX="-129.0" />
-      <Line endX="300.0" layoutX="217.0" layoutY="172.0" startX="-129.0" />
-      <Line endX="300.0" layoutX="215.0" layoutY="383.0" startX="-129.0" />
+      <Line endX="300.0" layoutX="218.0" layoutY="54.0" startX="-129.0" />
+      <Line endX="300.0" layoutX="218.0" layoutY="124.0" startX="-129.0" />
+      <Line endX="300.0" layoutX="214.0" layoutY="444.0" startX="-129.0" />
+      <Button layoutX="139.0" layoutY="203.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="321.0" text="Create Regular Vending Machine (Custom)" textAlignment="CENTER">
+         <font>
+            <Font name="Segoe UI Semilight" size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="139.0" layoutY="250.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="321.0" text="Create Special Vending Machine (Preset)" textAlignment="CENTER">
+         <font>
+            <Font name="Segoe UI Semilight" size="16.0" />
+         </font>
+      </Button>
     </children>
 </AnchorPane>

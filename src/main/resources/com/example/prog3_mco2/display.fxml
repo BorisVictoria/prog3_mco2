@@ -2,26 +2,86 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.prog3_mco2.displayController">
     <children>
-        <Label layoutX="186.0" layoutY="110.0" text="Display Sales" textAlignment="CENTER">
+        <Label layoutX="199.0" layoutY="87.0" text="Display Sales" textAlignment="CENTER">
             <font>
                 <Font name="Segoe UI Semilight" size="36.0" />
             </font>
         </Label>
-        <Button layoutX="207.0" layoutY="205.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="187.0" text="TBD" textAlignment="CENTER">
+        <Button layoutX="207.0" layoutY="491.0" mnemonicParsing="false" onAction="#exit" prefHeight="39.0" prefWidth="187.0" text="Exit" textAlignment="CENTER">
             <font>
                 <Font name="Segoe UI Semilight" size="16.0" />
             </font></Button>
-        <Button layoutX="207.0" layoutY="258.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="187.0" text="TBD" textAlignment="CENTER">
-            <font>
-                <Font name="Segoe UI Semilight" size="16.0" />
-            </font></Button>
-        <Button layoutX="207.0" layoutY="310.0" mnemonicParsing="false" onAction="#exit" prefHeight="39.0" prefWidth="187.0" text="Exit" textAlignment="CENTER">
-            <font>
-                <Font name="Segoe UI Semilight" size="16.0" />
-            </font></Button>
+      <Line endX="371.0" layoutX="163.0" layoutY="71.0" startX="-100.0" />
+      <Line endX="369.0" layoutX="164.0" layoutY="153.0" startX="-100.0" />
+      <Label layoutX="72.0" layoutY="189.0" text="Item Name">
+         <font>
+            <Font name="Segoe UI Semilight" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="183.0" layoutY="189.0" text="Description">
+         <font>
+            <Font name="Segoe UI Semilight" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="288.0" layoutY="189.0" text="Prev. Qty.">
+         <font>
+            <Font name="Segoe UI Semilight" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="374.0" layoutY="189.0" text="Cur. Qty.">
+         <font>
+            <Font name="Segoe UI Semilight" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="452.0" layoutY="189.0" text="Total Sales">
+         <font>
+            <Font name="Segoe UI Semilight" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="72.0" layoutY="234.0" text="Item Name">
+         <font>
+            <Font name="Segoe UI Semilight" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="72.0" layoutY="275.0" text="Item Name">
+         <font>
+            <Font name="Segoe UI Semilight" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="72.0" layoutY="316.0" text="Item Name">
+         <font>
+            <Font name="Segoe UI Semilight" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="72.0" layoutY="349.0" text="Item Name">
+         <font>
+            <Font name="Segoe UI Semilight" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="72.0" layoutY="383.0" text="Item Name">
+         <font>
+            <Font name="Segoe UI Semilight" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="72.0" layoutY="419.0" text="Item Name">
+         <font>
+            <Font name="Segoe UI Semilight" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="72.0" layoutY="455.0" text="Item Name">
+         <font>
+            <Font name="Segoe UI Semilight" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="72.0" layoutY="498.0" text="Item Name">
+         <font>
+            <Font name="Segoe UI Semilight" size="16.0" />
+         </font>
+      </Label>
     </children>
 </AnchorPane>
