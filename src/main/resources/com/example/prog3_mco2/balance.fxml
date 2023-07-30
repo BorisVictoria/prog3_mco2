@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.prog3_mco2.balanceController">
     <children>
         <Label layoutX="87.0" layoutY="110.0" text=" Deposit / Withdraw Money" textAlignment="CENTER">
             <font>
@@ -19,7 +20,7 @@
             <font>
                 <Font name="Segoe UI Semilight" size="16.0" />
             </font></Button>
-        <Button layoutX="207.0" layoutY="310.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="187.0" text="Exit" textAlignment="CENTER">
+        <Button layoutX="207.0" layoutY="310.0" mnemonicParsing="false" onAction="#exit" prefHeight="39.0" prefWidth="187.0" text="Exit" textAlignment="CENTER">
             <font>
                 <Font name="Segoe UI Semilight" size="16.0" />
             </font></Button>

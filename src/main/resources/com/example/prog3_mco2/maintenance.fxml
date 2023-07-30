@@ -5,14 +5,14 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.prog3_mco2.maintenanceController">
     <children>
         <Label layoutX="149.0" layoutY="100.0" prefHeight="53.0" prefWidth="300.0" text="Maintenance Menu" textAlignment="CENTER">
             <font>
                 <Font name="Segoe UI Semilight" size="36.0" />
             </font>
         </Label>
-        <Button layoutX="73.0" layoutY="321.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="213.0" text="Display Sales" textAlignment="CENTER">
+        <Button layoutX="73.0" layoutY="321.0" mnemonicParsing="false" onAction="#initDisplay" prefHeight="39.0" prefWidth="213.0" text="Display Sales" textAlignment="CENTER">
          <font>
             <Font name="Segoe UI Semilight" size="16.0" />
          </font></Button>
@@ -20,12 +20,12 @@
          <font>
             <Font name="Segoe UI Semilight" size="16.0" />
          </font></Button>
-      <Button layoutX="313.0" layoutY="196.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="213.0" text="Stock" textAlignment="CENTER">
+      <Button layoutX="313.0" layoutY="196.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="213.0" text="Restock" textAlignment="CENTER">
          <font>
             <Font name="Segoe UI Semilight" size="16.0" />
          </font>
       </Button>
-      <Button layoutX="73.0" layoutY="258.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="213.0" text="Deposit / Withdraw Money" textAlignment="CENTER">
+      <Button layoutX="73.0" layoutY="258.0" mnemonicParsing="false" onAction="#initBalance" prefHeight="39.0" prefWidth="213.0" text="Deposit / Withdraw Money" textAlignment="CENTER">
          <font>
             <Font name="Segoe UI Semilight" size="16.0" />
          </font>
@@ -35,7 +35,7 @@
             <Font name="Segoe UI Semilight" size="16.0" />
          </font>
       </Button>
-      <Button layoutX="313.0" layoutY="321.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="213.0" text="Exit" textAlignment="CENTER">
+      <Button layoutX="313.0" layoutY="321.0" mnemonicParsing="false" onAction="#exit" prefHeight="39.0" prefWidth="213.0" text="Exit" textAlignment="CENTER">
          <font>
             <Font name="Segoe UI Semilight" size="16.0" />
          </font>

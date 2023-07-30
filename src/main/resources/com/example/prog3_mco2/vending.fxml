@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Region?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.prog3_mco2.vendingController">
    <children>
-      <Region layoutX="22.0" layoutY="27.0" prefHeight="678.0" prefWidth="535.0" style="-fx-border-color: black;" />
+      <Region layoutX="22.0" layoutY="27.0" prefHeight="614.0" prefWidth="494.0" style="-fx-border-color: black;" />
       <Region layoutX="43.0" layoutY="43.0" prefHeight="131.0" prefWidth="135.0" style="-fx-border-color: black;" />
       <Region layoutX="201.0" layoutY="43.0" prefHeight="131.0" prefWidth="135.0" style="-fx-border-color: black;" />
       <Region layoutX="355.0" layoutY="43.0" prefHeight="131.0" prefWidth="135.0" style="-fx-border-color: black;" />
@@ -14,5 +15,8 @@
       <Region layoutX="43.0" layoutY="333.0" prefHeight="131.0" prefWidth="135.0" style="-fx-border-color: black;" />
       <Region layoutX="201.0" layoutY="333.0" prefHeight="131.0" prefWidth="135.0" style="-fx-border-color: black;" />
       <Region layoutX="355.0" layoutY="333.0" prefHeight="131.0" prefWidth="135.0" style="-fx-border-color: black;" />
+      <Region layoutX="43.0" layoutY="486.0" prefHeight="131.0" prefWidth="135.0" style="-fx-border-color: black;" />
+      <Region layoutX="201.0" layoutY="486.0" prefHeight="131.0" prefWidth="135.0" style="-fx-border-color: black;" />
+      <Region layoutX="355.0" layoutY="486.0" prefHeight="131.0" prefWidth="135.0" style="-fx-border-color: black;" />
    </children>
 </AnchorPane>
