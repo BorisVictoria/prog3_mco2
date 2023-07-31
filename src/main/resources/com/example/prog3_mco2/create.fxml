@@ -12,11 +12,7 @@
                 <Font name="Segoe UI Semilight" size="36.0" />
             </font>
         </Label>
-        <Button layoutX="139.0" layoutY="157.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="321.0" text="Create Regular Vending Machine (Preset)" textAlignment="CENTER">
-         <font>
-            <Font name="Segoe UI Semilight" size="16.0" />
-         </font></Button>
-        <Button layoutX="139.0" layoutY="303.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="321.0" text="Create Special Vending Machine (Custom)" textAlignment="CENTER">
+        <Button layoutX="139.0" layoutY="303.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="321.0" text="Create Special Vending Machine" textAlignment="CENTER">
          <font>
             <Font name="Segoe UI Semilight" size="16.0" />
          </font></Button>
@@ -27,12 +23,7 @@
       <Line endX="300.0" layoutX="218.0" layoutY="54.0" startX="-129.0" />
       <Line endX="300.0" layoutX="218.0" layoutY="124.0" startX="-129.0" />
       <Line endX="300.0" layoutX="214.0" layoutY="444.0" startX="-129.0" />
-      <Button layoutX="139.0" layoutY="203.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="321.0" text="Create Regular Vending Machine (Custom)" textAlignment="CENTER">
-         <font>
-            <Font name="Segoe UI Semilight" size="16.0" />
-         </font>
-      </Button>
-      <Button layoutX="139.0" layoutY="250.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="321.0" text="Create Special Vending Machine (Preset)" textAlignment="CENTER">
+      <Button layoutX="139.0" layoutY="203.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="321.0" text="Create Regular Vending Machine" textAlignment="CENTER">
          <font>
             <Font name="Segoe UI Semilight" size="16.0" />
          </font>
