@@ -68,6 +68,16 @@ public class maintenanceController {
         stage.show();
     }
 
+    public void initRemove(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("remove.fxml"));
+        loader.setControllerFactory(controllerClass -> new removeController(vm));
+        root = loader.load();
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
     public void initBalance(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("balance.fxml"));
         loader.setControllerFactory(controllerClass -> new balanceController(vm));
