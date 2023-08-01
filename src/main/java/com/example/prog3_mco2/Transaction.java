@@ -18,7 +18,7 @@ public class Transaction
      * @param price the price of the item transacted
      * @param slotIndex the index of the slot item transacted
      */
-    Transaction(String name, double price, int slotIndex)
+    public Transaction(String name, double price, int slotIndex)
     {
         this.ITEM_NAME = name;
         this.PRICE = price;
