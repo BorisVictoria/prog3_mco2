@@ -77,7 +77,8 @@ public class removeController implements Initializable {
     {
         String name = choiceBox.getValue();
 
-        for (int i = 0; i < vm.getSlotList().size(); i++) {
+        for (int i = 0; i < vm.getSlotList().size(); i++)
+        {
             if (choiceBox.getItems().get(i).equals(name))
             {
                 lbl1.setText(vm.getSlotList().get(i).getName());

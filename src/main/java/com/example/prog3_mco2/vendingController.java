@@ -68,25 +68,28 @@ public class vendingController implements Initializable
 
         for (int i = 0; i < vm.getSlotList().size(); i++)
         {
-            if (choiceBox.getItems().get(i).equals(name)) {
-                if ((change = vm.dispenseItem(i)) != null)
+            if (choiceBox.getItems().get(i).equals(name))
+            {
+                int temp = vm.getInserted().getTotal();
+                change = vm.dispenseItem(i);
+                if (change != null)
                 {
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
                     alert.setTitle("Information");
                     alert.setHeaderText("Item Dispensed!");
                     String str1 = "";
                     str1 = str1.concat("Transaction Summary \n" + "Item: " + vm.getSlotList().get(i).getName() + "\nPrice: " + vm.getSlotList().get(i).getItemPrice() +
-                        "\nCalories: " + vm.getSlotList().get(i).getItemCalories() + "\nDescription: " + vm.getSlotList().get(i).getItemDescription() + "\nCash: " + vm.getMoney().getTotal() + "Change: \n");
+                        "\nCalories: " + vm.getSlotList().get(i).getItemCalories() + "\nDescription: " + vm.getSlotList().get(i).getItemDescription() + "\nCash: " + temp + "\nChange: \n");
 
-                    if (change.get(0).size() == 0)  str1 = str1.concat("1 Peso x" + change.get(0).size() + "\n");
-                    if (change.get(1).size() == 0)  str1 = str1.concat("5 Peso x" + change.get(1).size() + "\n");
-                    if (change.get(2).size() == 0)  str1 = str1.concat("10 Peso x" + change.get(2).size() + "\n");
-                    if (change.get(3).size() == 0)  str1 = str1.concat("20 Peso x" + change.get(3).size() + "\n");
-                    if (change.get(4).size() == 0)  str1 = str1.concat("50 Peso x" + change.get(4).size() + "\n");
-                    if (change.get(5).size() == 0)  str1 = str1.concat("100 Peso x" + change.get(5).size() + "\n");
-                    if (change.get(6).size() == 0)  str1 = str1.concat("200 Peso x" + change.get(6).size() + "\n");
-                    if (change.get(7).size() == 0)  str1 = str1.concat("500 Peso x" + change.get(7).size() + "\n");
-                    if (change.get(8).size() == 0)  str1 = str1.concat("1000 Peso x" + change.get(8).size() + "\n");
+                    if (change.get(0).size() > 0)  str1 = str1.concat("1 Peso x" + change.get(0).size() + "\n");
+                    if (change.get(1).size() > 0)  str1 = str1.concat("5 Peso x" + change.get(1).size() + "\n");
+                    if (change.get(2).size() > 0)  str1 = str1.concat("10 Peso x" + change.get(2).size() + "\n");
+                    if (change.get(3).size() > 0)  str1 = str1.concat("20 Peso x" + change.get(3).size() + "\n");
+                    if (change.get(4).size() > 0)  str1 = str1.concat("50 Peso x" + change.get(4).size() + "\n");
+                    if (change.get(5).size() > 0)  str1 = str1.concat("100 Peso x" + change.get(5).size() + "\n");
+                    if (change.get(6).size() > 0)  str1 = str1.concat("200 Peso x" + change.get(6).size() + "\n");
+                    if (change.get(7).size() > 0)  str1 = str1.concat("500 Peso x" + change.get(7).size() + "\n");
+                    if (change.get(8).size() > 0)  str1 = str1.concat("1000 Peso x" + change.get(8).size() + "\n");
                     alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
                     alert.setContentText(str1);
                     alert.show();
@@ -107,6 +110,17 @@ public class vendingController implements Initializable
 
     }
 
+    public void cancel(ActionEvent event)
+    {
+        vm.getInserted().removeAll();
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Information");
+        alert.setHeaderText("Transaction Cancelled!");
+        alert.setContentText("Your money has been removed");
+        alert.show();
+        choiceList();
+    }
+
     public void add1Peso(ActionEvent event)
     {
         ArrayList<ArrayList<Bill>> inserted = new ArrayList<ArrayList<Bill>>();
@@ -116,6 +130,7 @@ public class vendingController implements Initializable
         }
         inserted.get(0).add(new Bill(1));
         vm.getInserted().addMoney(inserted);
+        choiceList();
     }
 
     public void add5Peso(ActionEvent event)
@@ -127,6 +142,7 @@ public class vendingController implements Initializable
         }
         inserted.get(1).add(new Bill(5));
         vm.getInserted().addMoney(inserted);
+        choiceList();
     }
 
     public void add10Peso(ActionEvent event)
@@ -138,6 +154,7 @@ public class vendingController implements Initializable
         }
         inserted.get(2).add(new Bill(10));
         vm.getInserted().addMoney(inserted);
+        choiceList();
     }
 
     public void add20Peso(ActionEvent event)
@@ -149,6 +166,7 @@ public class vendingController implements Initializable
         }
         inserted.get(3).add(new Bill(20));
         vm.getInserted().addMoney(inserted);
+        choiceList();
     }
 
     public void add50Peso(ActionEvent event)
@@ -160,6 +178,7 @@ public class vendingController implements Initializable
         }
         inserted.get(4).add(new Bill(50));
         vm.getInserted().addMoney(inserted);
+        choiceList();
     }
 
     public void add100Peso(ActionEvent event)
@@ -171,6 +190,7 @@ public class vendingController implements Initializable
         }
         inserted.get(5).add(new Bill(100));
         vm.getInserted().addMoney(inserted);
+        choiceList();
     }
 
     public void add200Peso(ActionEvent event)
@@ -182,6 +202,7 @@ public class vendingController implements Initializable
         }
         inserted.get(6).add(new Bill(200));
         vm.getInserted().addMoney(inserted);
+        choiceList();
     }
 
     public void add500Peso(ActionEvent event)
@@ -193,6 +214,7 @@ public class vendingController implements Initializable
         }
         inserted.get(7).add(new Bill(500));
         vm.getInserted().addMoney(inserted);
+        choiceList();
     }
 
     public void add1000Peso(ActionEvent event)
@@ -204,6 +226,7 @@ public class vendingController implements Initializable
         }
         inserted.get(8).add(new Bill(1000));
         vm.getInserted().addMoney(inserted);
+        choiceList();
     }
 
 

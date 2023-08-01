@@ -122,6 +122,9 @@ public class RegularVendingMachine {
      */
     public ArrayList<ArrayList<Bill>> dispenseItem(int slotIndex)
     {
+        if (SLOT_LIST.get(slotIndex).isEmpty())
+            return null;
+
         ArrayList<ArrayList<Bill>> change = dispenseChange(slotIndex);
 
         if (change == null)
@@ -298,22 +301,9 @@ public class RegularVendingMachine {
      * This method displays the items sold and the total sales for each item
      *
      */
-    public void displayTransactions()
+    public ArrayList<Transaction> getTransactions()
     {
-
-        if (TRANSACTION_LIST.size() > 0) // If there are transactions
-        {
-
-            int[] slotIndex = new int[8]; // Array to store the number of items sold for each slot
-            int[] totalSales = new int[8]; // Array to store the total sales for each slot
-
-            System.out.println("Items Sold");
-            for (int i = 0; i < TRANSACTION_LIST.size(); i++) {
-                slotIndex[TRANSACTION_LIST.get(i).getSlotIndex()]++;
-                totalSales[TRANSACTION_LIST.get(i).getSlotIndex()] += TRANSACTION_LIST.get(i).getPrice();
-            }
-
-        }
+        return TRANSACTION_LIST;
     }
 
 }
