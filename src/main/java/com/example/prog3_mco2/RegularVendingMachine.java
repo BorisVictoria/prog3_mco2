@@ -47,7 +47,7 @@ public class RegularVendingMachine {
         change = new ArrayList<ArrayList<Bill>>();
         for (int i = 0; i < 9; i++)
         {
-            change.set(i, new ArrayList<Bill>());
+            change.add(new ArrayList<Bill>());
         }
         temp = totalChange;
 
