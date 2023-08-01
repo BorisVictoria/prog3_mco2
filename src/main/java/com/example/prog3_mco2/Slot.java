@@ -39,7 +39,12 @@ public class Slot
         }
         else
         {
-            ITEM_LIST.add(new Item(ITEM.getName(), ITEM.getPrice(), ITEM.getDescription(), ITEM.getCalories()));
+            if (ITEM instanceof Base)
+                ITEM_LIST.add(new Base(ITEM.getName(), ITEM.getPrice(), ITEM.getDescription(), ITEM.getCalories()));
+            else if (ITEM instanceof Addon)
+                ITEM_LIST.add(new Addon(ITEM.getName(), ITEM.getPrice(), ITEM.getDescription(), ITEM.getCalories()));
+            else
+                ITEM_LIST.add(new Item(ITEM.getName(), ITEM.getPrice(), ITEM.getDescription(), ITEM.getCalories()));
             return true;
         }
     }
@@ -80,6 +85,10 @@ public class Slot
         return ITEM_LIST.size() == 0;
     }
 
+    public Item getItem()
+    {
+        return ITEM;
+    }
     /**
      * This method gets the name of the item in the slot
      *
