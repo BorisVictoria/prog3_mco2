@@ -1,5 +1,3 @@
-
-
 /**
  * This class represents a slot in a vending machine
  *
