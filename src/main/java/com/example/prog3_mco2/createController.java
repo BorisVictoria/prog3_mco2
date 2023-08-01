@@ -19,6 +19,8 @@ public class createController
     private Scene scene;
     private Parent root;
 
+    private RegularVendingMachine vm;
+
     @FXML
     private Button btn1;
 
@@ -28,10 +30,17 @@ public class createController
     @FXML
     private Button btn3;
 
+    public createController(RegularVendingMachine vm)
+    {
+        this.vm = vm;
+    }
+
 
     public void exit(ActionEvent event) throws IOException
     {
-        root = FXMLLoader.load(getClass().getResource("main.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("main.fxml"));
+        loader.setControllerFactory(controllerClass -> new mainController(vm));
+        root = loader.load();
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

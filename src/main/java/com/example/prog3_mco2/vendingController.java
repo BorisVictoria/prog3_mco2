@@ -7,7 +7,6 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -18,6 +17,8 @@ public class vendingController
     private Stage stage;
     private Scene scene;
     private Parent root;
+
+    private RegularVendingMachine vm;
 
     @FXML
     private Button btn1;
@@ -43,10 +44,27 @@ public class vendingController
     @FXML
     private Button btn8;
 
+    public vendingController(RegularVendingMachine vm)
+    {
+        this.vm = vm;
+    }
+
+    public void initSpecial(ActionEvent event) throws IOException
+    {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("special.fxml"));
+        loader.setControllerFactory(controllerClass -> new specialController(vm));
+        root = loader.load();
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 
     public void exit(ActionEvent event) throws IOException
     {
-        root = FXMLLoader.load(getClass().getResource("test.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("test.fxml"));
+        loader.setControllerFactory(controllerClass -> new testController(vm));
+        root = loader.load();
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

@@ -7,7 +7,6 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.Spinner;
 import javafx.stage.Stage;
 
@@ -19,6 +18,8 @@ public class balanceController
     private Stage stage;
     private Scene scene;
     private Parent root;
+
+    private RegularVendingMachine vm;
 
     @FXML
     private Button btn1;
@@ -56,9 +57,16 @@ public class balanceController
     @FXML
     private Spinner spn9;
 
+    public balanceController(RegularVendingMachine vm)
+    {
+        this.vm = vm;
+    }
+
     public void exit(ActionEvent event) throws IOException
     {
-        root = FXMLLoader.load(getClass().getResource("maintenance.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("maintenance.fxml"));
+        loader.setControllerFactory(controllerClass -> new maintenanceController(vm));
+        root = loader.load();
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

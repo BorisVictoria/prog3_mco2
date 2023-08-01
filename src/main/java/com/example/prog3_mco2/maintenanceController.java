@@ -7,7 +7,6 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -17,6 +16,8 @@ public class maintenanceController {
     private Stage stage;
     private Scene scene;
     private Parent root;
+
+    private RegularVendingMachine vm;
 
     @FXML
     private Button btn1;
@@ -42,25 +43,67 @@ public class maintenanceController {
     @FXML
     private Button btn8;
 
-    public void initBalance(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("balance.fxml"));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+    public maintenanceController(RegularVendingMachine vm)
+    {
+        this.vm = vm;
+    }
+
+    public void initStock(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("stock.fxml"));
+        loader.setControllerFactory(controllerClass -> new stockController(vm));
+        root = loader.load();
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
 
+    public void initRestock(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("restock.fxml"));
+        loader.setControllerFactory(controllerClass -> new restockController(vm));
+        root = loader.load();
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void initBalance(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("balance.fxml"));
+        loader.setControllerFactory(controllerClass -> new balanceController(vm));
+        root = loader.load();
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void initChange(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("change.fxml"));
+        loader.setControllerFactory(controllerClass -> new changeController(vm));
+        root = loader.load();
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+
     public void initDisplay(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("display.fxml"));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("display.fxml"));
+        loader.setControllerFactory(controllerClass -> new displayController(vm));
+        root = loader.load();
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
 
     public void exit(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("test.fxml"));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("test.fxml"));
+        loader.setControllerFactory(controllerClass -> new testController(vm));
+        root = loader.load();
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
