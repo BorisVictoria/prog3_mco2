@@ -1,13 +1,11 @@
 package com.example.prog3_mco2;
 
-import java.util.ArrayList;
-
-public class Money
+public class Register
 {
     int[] money;
     int total;
 
-    public Money()
+    public Register()
     {
         money = new int[9];
         total = 0;

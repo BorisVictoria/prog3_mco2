@@ -15,8 +15,8 @@ public class RegularVendingMachine {
     protected int numCapacity;
     protected final ArrayList<Slot> SLOT_LIST; // list of slots of the vending machine
     protected final ArrayList<Transaction> TRANSACTION_LIST; // list of transactions of the vending machine
-    protected Money money; // array of change in multiple denominations
-    protected Money inserted; // array of payments in multiple denominations
+    protected Register register; // array of change in multiple denominations
+    protected Register inserted; // array of payments in multiple denominations
 
     /**
      * Constructor for objects of class RegularVendingMachine
@@ -27,8 +27,8 @@ public class RegularVendingMachine {
         this.name = name;
         SLOT_LIST = new ArrayList<Slot>();
         TRANSACTION_LIST = new ArrayList<Transaction>();
-        money = new Money();
-        inserted = new Money();
+        register = new Register();
+        inserted = new Register();
 
     }
 
@@ -48,31 +48,31 @@ public class RegularVendingMachine {
         change = new int[9];
         temp = totalChange;
 
-        change[8] = Math.min(temp / 1000, money.getDenominations()[8]);
+        change[8] = Math.min(temp / 1000, register.getDenominations()[8]);
         temp -= change[8] * 1000;
 
-        change[7] = Math.min(temp / 500, money.getDenominations()[7]);
+        change[7] = Math.min(temp / 500, register.getDenominations()[7]);
         temp -= change[7] * 500;
 
-        change[6] = Math.min(temp / 200, money.getDenominations()[6]);
+        change[6] = Math.min(temp / 200, register.getDenominations()[6]);
         temp -= change[6] * 200;
 
-        change[5] = Math.min(temp / 100, money.getDenominations()[5]);
+        change[5] = Math.min(temp / 100, register.getDenominations()[5]);
         temp -= change[5] * 100;
 
-        change[4] = Math.min(temp / 50, money.getDenominations()[4]);
+        change[4] = Math.min(temp / 50, register.getDenominations()[4]);
         temp -= change[4] * 50;
 
-        change[3] = Math.min(temp / 20, money.getDenominations()[3]);
+        change[3] = Math.min(temp / 20, register.getDenominations()[3]);
         temp -= change[3] * 20;
 
-        change[2] = Math.min(temp / 10, money.getDenominations()[2]);
+        change[2] = Math.min(temp / 10, register.getDenominations()[2]);
         temp -= change[2] * 10;
 
-        change[1] = Math.min(temp / 5, money.getDenominations()[1]);
+        change[1] = Math.min(temp / 5, register.getDenominations()[1]);
         temp -= change[1] * 5;
 
-        change[0] = Math.min(temp, money.getDenominations()[0]);
+        change[0] = Math.min(temp, register.getDenominations()[0]);
         temp -= change[0];
         // checks if there is enough change
         if (temp != 0)
@@ -121,8 +121,8 @@ public class RegularVendingMachine {
 
         // Updates the money in the vending machine
 
-        money.removeMoney(change);
-        money.addMoney(inserted.getDenominations());
+        register.removeMoney(change);
+        register.addMoney(inserted.getDenominations());
         inserted.removeAll();
 
         return change;
@@ -273,9 +273,9 @@ public class RegularVendingMachine {
      *
      * @return array of change in multiple denominations
      */
-    public Money getMoney()
+    public Register getMoney()
     {
-        return money;
+        return register;
     }
 
     /**
@@ -283,7 +283,7 @@ public class RegularVendingMachine {
      *
      * @return array of inserted money in multiple denominations
      */
-    public Money getInserted()
+    public Register getInserted()
     {
         return inserted;
     }
@@ -296,6 +296,11 @@ public class RegularVendingMachine {
     public ArrayList<Slot> getSlotList()
     {
         return SLOT_LIST;
+    }
+
+    public ArrayList<Transaction> getTransactionList()
+    {
+        return TRANSACTION_LIST;
     }
 
 

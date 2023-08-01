@@ -4,27 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82bea4a4-91b0-4385-8cf2-eb72fe692f93" name="Changes" comment="create special vending machine class prototype">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/Money.java" afterDir="false" />
+    <list default="true" id="82bea4a4-91b0-4385-8cf2-eb72fe692f93" name="Changes" comment="separate dispensing to dispenseItem and dispenseChange">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/RegularVendingMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/RegularVendingMachine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/balanceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/balanceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/changeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/changeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/createController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/createController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/displayController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/displayController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/mainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/mainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/maintenanceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/maintenanceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/restockController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/restockController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/specialController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/specialController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/stockController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/stockController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/testController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/testController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/vendingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/vendingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/prog3_mco2/change.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/prog3_mco2/change.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/prog3_mco2/restock.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/prog3_mco2/restock.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/prog3_mco2/special.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/prog3_mco2/special.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/prog3_mco2/stock.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/prog3_mco2/stock.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/prog3_mco2/vending.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/prog3_mco2/vending.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,8 +17,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -112,6 +95,7 @@
       <workItem from="1690721212817" duration="3502000" />
       <workItem from="1690724729168" duration="8266000" />
       <workItem from="1690847708469" duration="8252000" />
+      <workItem from="1690856347404" duration="15089000" />
     </task>
     <task id="LOCAL-00001" summary="GUI prototype">
       <created>1690711564913</created>
@@ -162,7 +146,91 @@
       <option name="project" value="LOCAL" />
       <updated>1690849716802</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="refactor by using fxml setControllerFactory to allow use of constructor">
+      <created>1690857955552</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1690857955552</updated>
+    </task>
+    <task id="LOCAL-00009" summary="ui consistency pass">
+      <created>1690857987766</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1690857987766</updated>
+    </task>
+    <task id="LOCAL-00010" summary="code refactor for custom item creation">
+      <created>1690858021169</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1690858021169</updated>
+    </task>
+    <task id="LOCAL-00011" summary="restructure money to follow oop">
+      <created>1690858043924</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1690858043924</updated>
+    </task>
+    <task id="LOCAL-00012" summary="create model to pass to controllers">
+      <created>1690858061766</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1690858061766</updated>
+    </task>
+    <task id="LOCAL-00013" summary="redesign stock ui">
+      <created>1690875616279</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1690875616279</updated>
+    </task>
+    <task id="LOCAL-00014" summary="redesign money to follow oop">
+      <created>1690875631300</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1690875631300</updated>
+    </task>
+    <task id="LOCAL-00015" summary="redesign create ui for custom items">
+      <created>1690875706993</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1690875706993</updated>
+    </task>
+    <task id="LOCAL-00016" summary="add custom item controller">
+      <created>1690875751925</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1690875751925</updated>
+    </task>
+    <task id="LOCAL-00017" summary="prevent user from entering test when vm is null">
+      <created>1690875785443</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1690875785443</updated>
+    </task>
+    <task id="LOCAL-00018" summary="remove redundant fxml dependencies">
+      <created>1690875808917</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1690875808917</updated>
+    </task>
+    <task id="LOCAL-00019" summary="separate dispensing to dispenseItem and dispenseChange">
+      <created>1690875839816</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1690875839816</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,6 +268,18 @@
     <MESSAGE value="fix Transaction missing access modifier" />
     <MESSAGE value="fix Slot wrong restock logic" />
     <MESSAGE value="create special vending machine class prototype" />
-    <option name="LAST_COMMIT_MESSAGE" value="create special vending machine class prototype" />
+    <MESSAGE value="refactor by using fxml setControllerFactory to allow use of constructor" />
+    <MESSAGE value="ui consistency pass" />
+    <MESSAGE value="code refactor for custom item creation" />
+    <MESSAGE value="restructure money to follow oop" />
+    <MESSAGE value="create model to pass to controllers" />
+    <MESSAGE value="redesign stock ui" />
+    <MESSAGE value="redesign money to follow oop" />
+    <MESSAGE value="redesign create ui for custom items" />
+    <MESSAGE value="add custom item controller" />
+    <MESSAGE value="prevent user from entering test when vm is null" />
+    <MESSAGE value="remove redundant fxml dependencies" />
+    <MESSAGE value="separate dispensing to dispenseItem and dispenseChange" />
+    <option name="LAST_COMMIT_MESSAGE" value="separate dispensing to dispenseItem and dispenseChange" />
   </component>
 </project>
