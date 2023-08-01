@@ -177,7 +177,7 @@ public class RegularVendingMachine {
 
         Item newItem = new Item(name, price, description, calories);
 
-        if (SLOT_LIST.size() >= numSlots)
+        if (SLOT_LIST.size() >= numSlots || price < 1 || calories < 1)
             return false;
         else
         {
@@ -192,35 +192,6 @@ public class RegularVendingMachine {
 
         TRANSACTION_LIST.clear();
         return true;
-    }
-
-    /**
-     * This method replaces an item in the vending machine
-     *
-     * @param name the name of the item to be stocked
-     * @param price the price of the to be stocked
-     * @param description the description of the item to be stocked
-     * @param calories the calories of the item to be stocked
-     * @param slotIndex the slot index of the item to be replaced
-     *
-     * @return true if the item was replaced, false if the item was not replaced
-     */
-    public boolean replace(String name, int price, String description, int calories, int slotIndex)
-    {
-        Item newItem = new Item(name, price, description, calories);
-
-        // If the item to be replaced is the same as the item to be replaced with then return false
-        for (int i = 0; i < SLOT_LIST.size(); i++)
-        {
-            if (SLOT_LIST.get(i).getName().equals(name))
-                return false;
-
-        }
-        SLOT_LIST.set(slotIndex, new Slot(newItem));
-
-        TRANSACTION_LIST.clear();
-        return true;
-
     }
 
     /**
