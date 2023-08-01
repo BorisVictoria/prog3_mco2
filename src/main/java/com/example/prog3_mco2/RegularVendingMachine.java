@@ -130,30 +130,6 @@ public class RegularVendingMachine {
         TRANSACTION_LIST.add(new Transaction(SLOT_LIST.get(slotIndex).getName(), SLOT_LIST.get(slotIndex).getItemPrice(), slotIndex));
         SLOT_LIST.get(slotIndex).removeItem();
 
-        // Displays the transaction summary
-
-//        System.out.println("Transaction Summary \n");
-//        System.out.println("Item: " + SLOT_LIST.get(slotIndex).getName());
-//        System.out.println("Price: " + SLOT_LIST.get(slotIndex).getItemPrice());
-//        System.out.println("Calories: " + SLOT_LIST.get(slotIndex).getItemCalories());
-//        System.out.println("Description: " + SLOT_LIST.get(slotIndex).getItemDescription() + "\n");
-//        System.out.println("Cash: " + totalInserted);
-//        System.out.println("Change: " + totalChange + "\n");
-
-        // Displays the change dispensed
-
-//        if (change[0] != 0) System.out.println("1 Peso x " + change[0] + " dispensed");
-//        if (change[1] != 0) System.out.println("5 Peso x " + change[1] + " dispensed");
-//        if (change[2] != 0) System.out.println("10 Peso x " + change[2] + " dispensed");
-//        if (change[3] != 0) System.out.println("20 Peso x " + change[3] + " dispensed");
-//        if (change[4] != 0) System.out.println("50 Peso x " + change[4] + " dispensed");
-//        if (change[5] != 0) System.out.println("100 Peso x " + change[5] + " dispensed");
-//        if (change[6] != 0) System.out.println("200 Peso x " + change[6] + " dispensed");
-//        if (change[7] != 0) System.out.println("500 Peso x " + change[7] + " dispensed");
-//        if (change[8] != 0) System.out.println("1000 Peso x " + change[8] + " dispensed");
-
-        // Updates the money in the vending machine
-
         register.removeMoney(change);
         register.addMoney(inserted.getDenominations());
         inserted.removeAll();
@@ -332,34 +308,12 @@ public class RegularVendingMachine {
             int[] totalSales = new int[8]; // Array to store the total sales for each slot
 
             System.out.println("Items Sold");
-            for (int i = 0; i < TRANSACTION_LIST.size(); i++)
-            {
+            for (int i = 0; i < TRANSACTION_LIST.size(); i++) {
                 slotIndex[TRANSACTION_LIST.get(i).getSlotIndex()]++;
                 totalSales[TRANSACTION_LIST.get(i).getSlotIndex()] += TRANSACTION_LIST.get(i).getPrice();
             }
-            // Display the items sold and the total sales for each item
-
-            System.out.println("----------------------------------------------------------------------------------------------------------");
-            System.out.println("|       Item Name       |           Description           |  Prev. Qty  |  Cur. Qty  |    Total Sales    |");
-            System.out.println("----------------------------------------------------------------------------------------------------------");
-
-            for (int i = 0; i < SLOT_LIST.size(); i++)
-            {
-                if (slotIndex[i] > 0)
-                {
-                    System.out.format("| %-21s | %-31s | %10d  | %10d |  %16d |\n", SLOT_LIST.get(i).getName(), SLOT_LIST.get(i).getItemDescription(), SLOT_LIST.get(i).getItemQuantity() + slotIndex[i], SLOT_LIST.get(i).getItemQuantity(), totalSales[i]);
-                }
-
-            }
-
-            System.out.println("---------------------------------------------------------------------------------------------------------");
-        }
-        else
-        {
-            System.out.println("No transactions found!");
 
         }
-
     }
 
 }
