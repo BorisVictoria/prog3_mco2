@@ -1,14 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.prog3_mco2.Remove"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.prog3_mco2.removeController">
+    <children>
+        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="206.0" layoutY="64.0" text="Remove Item" textAlignment="CENTER">
+            <font>
+                <Font name="Segoe UI Semilight" size="36.0" />
+            </font>
+        </Label>
+        <Button layoutX="334.0" layoutY="494.0" mnemonicParsing="false" onAction="#exit" prefHeight="39.0" prefWidth="187.0" text="Exit" textAlignment="CENTER">
+            <font>
+                <Font name="Segoe UI Semilight" size="16.0" />
+            </font></Button>
+        <Button layoutX="95.0" layoutY="494.0" mnemonicParsing="false" onAction="#remove" prefHeight="39.0" prefWidth="187.0" text="Remove Item" textAlignment="CENTER">
+            <font>
+                <Font name="Segoe UI Semilight" size="16.0" />
+            </font>
+        </Button>
+        <Label alignment="CENTER" layoutX="132.0" layoutY="224.0" text="Select Slot">
+            <font>
+                <Font name="Segoe UI Semilight" size="16.0" />
+            </font>
+        </Label>
+        <ChoiceBox fx:id="choiceBox" layoutX="95.0" layoutY="249.0" onAction="#list" prefWidth="150.0" />
+        <Region layoutX="288.0" layoutY="151.0" prefHeight="218.0" prefWidth="234.0" style="-fx-border-color: black;" />
+        <Label alignment="CENTER_RIGHT" layoutX="300.0" layoutY="160.0" text="Name:">
+            <font>
+                <Font name="Segoe UI Semilight" size="16.0" />
+            </font>
+        </Label>
+        <Label alignment="CENTER_RIGHT" layoutX="300.0" layoutY="211.0" text="Calories:">
+            <font>
+                <Font name="Segoe UI Semilight" size="16.0" />
+            </font>
+        </Label>
+        <Label alignment="CENTER_RIGHT" layoutX="300.0" layoutY="186.0" text="Price:">
+            <font>
+                <Font name="Segoe UI Semilight" size="16.0" />
+            </font>
+        </Label>
+        <Label layoutX="300.0" layoutY="262.0" text="Description:">
+            <font>
+                <Font name="Segoe UI Semilight" size="16.0" />
+            </font>
+        </Label>
+        <Label fx:id="lbl1" layoutX="396.0" layoutY="161.0">
+            <font>
+                <Font name="Segoe UI Semilight" size="16.0" />
+            </font>
+        </Label>
+        <Label fx:id="lbl2" layoutX="396.0" layoutY="186.0">
+            <font>
+                <Font name="Segoe UI Semilight" size="16.0" />
+            </font>
+        </Label>
+        <Label fx:id="lbl3" layoutX="396.0" layoutY="210.0">
+            <font>
+                <Font name="Segoe UI Semilight" size="16.0" />
+            </font>
+        </Label>
+        <Label fx:id="lbl5" layoutX="299.0" layoutY="264.0" prefHeight="93.0" prefWidth="213.0" text="Description Field">
+            <font>
+                <Font name="Segoe UI Semilight" size="16.0" />
+            </font>
+        </Label>
+        <Line endX="341.0" layoutX="191.0" layoutY="125.0" startX="-106.0" />
+        <Line endX="341.0" layoutX="191.0" layoutY="57.0" startX="-106.0" />
+        <Line endX="341.0" layoutX="201.0" layoutY="553.0" startX="-106.0" />
+        <Label layoutX="300.0" layoutY="236.0" text="Quantity:">
+            <font>
+                <Font name="Segoe UI Semilight" size="16.0" />
+            </font>
+        </Label>
+        <Label fx:id="lbl4" layoutX="396.0" layoutY="236.0">
+            <font>
+                <Font name="Segoe UI Semilight" size="16.0" />
+            </font>
+        </Label>
+        <Label layoutX="300.0" layoutY="332.0" text="Type:">
+            <font>
+                <Font name="Segoe UI Semilight" size="16.0" />
+            </font>
+        </Label>
+        <Label fx:id="lbl6" layoutX="396.0" layoutY="331.0">
+            <font>
+                <Font name="Segoe UI Semilight" size="16.0" />
+            </font>
+        </Label>
+    </children>
 </AnchorPane>
