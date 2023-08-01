@@ -77,7 +77,7 @@ public class stockController implements Initializable
 
             for (int i = 0; i < vm.getSlotList().size(); i++)
             {
-                if (!vm.getSlotList().get(i).getName().equals(name))
+                if (vm.getSlotList().get(i).getName().equals(name))
                     throw new Exception();
             }
 
@@ -114,7 +114,7 @@ public class stockController implements Initializable
 
             for (int i = 0; i < vm.getSlotList().size(); i++)
             {
-                if (!vm.getSlotList().get(i).getName().equals(name))
+                if (vm.getSlotList().get(i).getName().equals(name))
                     throw new Exception();
             }
 
@@ -151,7 +151,7 @@ public class stockController implements Initializable
 
             for (int i = 0; i < vm.getSlotList().size(); i++)
             {
-                if (!vm.getSlotList().get(i).getName().equals(name))
+                if (vm.getSlotList().get(i).getName().equals(name))
                     throw new Exception();
             }
 

@@ -85,7 +85,7 @@ public class removeController implements Initializable {
                 lbl3.setText(Integer.toString(vm.getSlotList().get(i).getItemCalories()));
                 lbl4.setText(Integer.toString(vm.getSlotList().get(i).getItemQuantity()));
                 lbl5.setText(vm.getSlotList().get(i).getItemDescription());
-                lbl6.setText(String.valueOf(vm.getSlotList().get(i).getItem().getClass()));
+                lbl6.setText(vm.getSlotList().get(i).getItem().getClass().getSimpleName());
             }
         }
     }
