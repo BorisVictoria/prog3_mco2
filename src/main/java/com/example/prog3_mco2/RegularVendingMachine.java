@@ -9,36 +9,77 @@ package com.example.prog3_mco2;
 
 import java.util.ArrayList;
 
-public class RegularVendingMachine
-{
+public class RegularVendingMachine {
     protected String name; // name of the vending machine
     protected int numSlots; // number of slots of the vending machine
     protected int numCapacity;
     protected final ArrayList<Slot> SLOT_LIST; // list of slots of the vending machine
     protected final ArrayList<Transaction> TRANSACTION_LIST; // list of transactions of the vending machine
-    protected int totalMoney; // total amount of change of the vending machine
-    protected int totalInserted; // total amount of money inserted by a buyer to the vending machine
-    protected int[] money; // array of change in multiple denominations
-    protected int[] inserted; // array of payments in multiple denominations
+    protected Money money; // array of change in multiple denominations
+    protected Money inserted; // array of payments in multiple denominations
 
     /**
      * Constructor for objects of class RegularVendingMachine
      *
      * @param name the name of the vending machine
-     *
      */
-    public RegularVendingMachine(String name, int numSlots, int numCapacity)
-    {
+    public RegularVendingMachine(String name, int numSlots, int numCapacity) {
         this.name = name;
         SLOT_LIST = new ArrayList<Slot>();
         TRANSACTION_LIST = new ArrayList<Transaction>();
-        totalMoney = 0;
-        totalInserted = 0;
-        money = new int[9];
-        inserted = new int[9];
+        money = new Money();
+        inserted = new Money();
 
     }
 
+
+    public int[] dispenseChange(int slotIndex)
+    {
+        int totalChange;
+        int[] change;
+        int temp;
+
+        // checks if total inserted is less than the price of the item
+        if (inserted.getTotal() < SLOT_LIST.get(slotIndex).getItemPrice())
+            return null;
+
+        // calculates the total change
+        totalChange = inserted.getTotal() - SLOT_LIST.get(slotIndex).getItemPrice();
+        change = new int[9];
+        temp = totalChange;
+
+        change[8] = Math.min(temp / 1000, money.getDenominations()[8]);
+        temp -= change[8] * 1000;
+
+        change[7] = Math.min(temp / 500, money.getDenominations()[7]);
+        temp -= change[7] * 500;
+
+        change[6] = Math.min(temp / 200, money.getDenominations()[6]);
+        temp -= change[6] * 200;
+
+        change[5] = Math.min(temp / 100, money.getDenominations()[5]);
+        temp -= change[5] * 100;
+
+        change[4] = Math.min(temp / 50, money.getDenominations()[4]);
+        temp -= change[4] * 50;
+
+        change[3] = Math.min(temp / 20, money.getDenominations()[3]);
+        temp -= change[3] * 20;
+
+        change[2] = Math.min(temp / 10, money.getDenominations()[2]);
+        temp -= change[2] * 10;
+
+        change[1] = Math.min(temp / 5, money.getDenominations()[1]);
+        temp -= change[1] * 5;
+
+        change[0] = Math.min(temp, money.getDenominations()[0]);
+        temp -= change[0];
+        // checks if there is enough change
+        if (temp != 0)
+            return null;
+
+        return change;
+    }
     /**
      * This method dispenses an item from the vending machine and calculates for the change
      *
@@ -46,102 +87,46 @@ public class RegularVendingMachine
      *
      * @return true if the item was dispensed, false if the item was not dispensed
      */
-    public boolean dispenseItem(int slotIndex)
+    public int[] dispenseItem(int slotIndex)
     {
+        int[] change = dispenseChange(slotIndex);
 
-        int totalChange;
-        int[] change;
-        int temp;
-
-        // checks if total inserted is less than the price of the item
-        if (totalInserted < SLOT_LIST.get(slotIndex).getItemPrice())
-            return false;
-
-        // calculates the total change
-        totalChange = totalInserted - SLOT_LIST.get(slotIndex).getItemPrice();
-        change = new int[9];
-        temp = totalChange;
-
-        change[8] = Math.min(temp / 1000, money[8]);
-        temp -= change[8] * 1000;
-
-        change[7] = Math.min(temp / 500, money[7]);
-        temp -= change[7] * 500;
-
-        change[6] = Math.min(temp / 200, money[6]);
-        temp -= change[6] * 200;
-
-        change[5] = Math.min(temp / 100, money[5]);
-        temp -= change[5] * 100;
-
-        change[4] = Math.min(temp / 50, money[4]);
-        temp -= change[4] * 50;
-
-        change[3] = Math.min(temp / 20, money[3]);
-        temp -= change[3] * 20;
-
-        change[2] = Math.min(temp / 10, money[2]);
-        temp -= change[2] * 10;
-
-        change[1] = Math.min(temp / 5, money[1]);
-        temp -= change[1] * 5;
-
-        change[0] = Math.min(temp, money[0]);
-        temp -= change[0];
-        // checks if there is enough change
-        if (temp != 0)
-            return false;
+        if (change == null)
+            return null;
 
         TRANSACTION_LIST.add(new Transaction(SLOT_LIST.get(slotIndex).getName(), SLOT_LIST.get(slotIndex).getItemPrice(), slotIndex));
         SLOT_LIST.get(slotIndex).removeItem();
 
         // Displays the transaction summary
 
-        System.out.println("Transaction Summary \n");
-        System.out.println("Item: " + SLOT_LIST.get(slotIndex).getName());
-        System.out.println("Price: " + SLOT_LIST.get(slotIndex).getItemPrice());
-        System.out.println("Calories: " + SLOT_LIST.get(slotIndex).getItemCalories());
-        System.out.println("Description: " + SLOT_LIST.get(slotIndex).getItemDescription() + "\n");
-        System.out.println("Cash: " + totalInserted);
-        System.out.println("Change: " + totalChange + "\n");
+//        System.out.println("Transaction Summary \n");
+//        System.out.println("Item: " + SLOT_LIST.get(slotIndex).getName());
+//        System.out.println("Price: " + SLOT_LIST.get(slotIndex).getItemPrice());
+//        System.out.println("Calories: " + SLOT_LIST.get(slotIndex).getItemCalories());
+//        System.out.println("Description: " + SLOT_LIST.get(slotIndex).getItemDescription() + "\n");
+//        System.out.println("Cash: " + totalInserted);
+//        System.out.println("Change: " + totalChange + "\n");
 
         // Displays the change dispensed
 
-        if (change[0] != 0) System.out.println("1 Peso x " + change[0] + " dispensed");
-        if (change[1] != 0) System.out.println("5 Peso x " + change[1] + " dispensed");
-        if (change[2] != 0) System.out.println("10 Peso x " + change[2] + " dispensed");
-        if (change[3] != 0) System.out.println("20 Peso x " + change[3] + " dispensed");
-        if (change[4] != 0) System.out.println("50 Peso x " + change[4] + " dispensed");
-        if (change[5] != 0) System.out.println("100 Peso x " + change[5] + " dispensed");
-        if (change[6] != 0) System.out.println("200 Peso x " + change[6] + " dispensed");
-        if (change[7] != 0) System.out.println("500 Peso x " + change[7] + " dispensed");
-        if (change[8] != 0) System.out.println("1000 Peso x " + change[8] + " dispensed");
+//        if (change[0] != 0) System.out.println("1 Peso x " + change[0] + " dispensed");
+//        if (change[1] != 0) System.out.println("5 Peso x " + change[1] + " dispensed");
+//        if (change[2] != 0) System.out.println("10 Peso x " + change[2] + " dispensed");
+//        if (change[3] != 0) System.out.println("20 Peso x " + change[3] + " dispensed");
+//        if (change[4] != 0) System.out.println("50 Peso x " + change[4] + " dispensed");
+//        if (change[5] != 0) System.out.println("100 Peso x " + change[5] + " dispensed");
+//        if (change[6] != 0) System.out.println("200 Peso x " + change[6] + " dispensed");
+//        if (change[7] != 0) System.out.println("500 Peso x " + change[7] + " dispensed");
+//        if (change[8] != 0) System.out.println("1000 Peso x " + change[8] + " dispensed");
 
         // Updates the money in the vending machine
-        for (int i = 0; i < 9; i++)
-        {
-            money[i] -= change[i];
-            money[i] += inserted[i];
-            inserted[i] = 0;
-        }
-        totalInserted = 0;
 
-        return true;
+        money.removeMoney(change);
+        money.addMoney(inserted.getDenominations());
+        inserted.removeAll();
 
-    }
+        return change;
 
-    /**
-     * This method cancels the transaction and returns the money inserted
-     *
-     */
-    public void cancel()
-    {
-        totalInserted = 0;
-
-        for (int i = 0; i < 9; i++)
-        {
-            inserted[i] = 0;
-        }
     }
 
     /**
@@ -288,7 +273,7 @@ public class RegularVendingMachine
      *
      * @return array of change in multiple denominations
      */
-    public int[] getMoney()
+    public Money getMoney()
     {
         return money;
     }
@@ -298,29 +283,9 @@ public class RegularVendingMachine
      *
      * @return array of inserted money in multiple denominations
      */
-    public int[] getInserted()
+    public Money getInserted()
     {
         return inserted;
-    }
-
-    /**
-     * This method returns the total money in the vending machine
-     *
-     * @return total amount of money of the vending machine
-     */
-    public int getTotalMoney()
-    {
-        return totalMoney;
-    }
-
-    /**
-     * This method returns the total money inserted into the vending machine
-     *
-     * @return total amount of inserted money of the vending machine
-     */
-    public int getTotalInserted()
-    {
-        return totalInserted;
     }
 
     /**
@@ -333,58 +298,6 @@ public class RegularVendingMachine
         return SLOT_LIST;
     }
 
-    /**
-     * This method adds money to the vending machine
-     *
-     * @param deposit array of denominations to be deposited
-     */
-    public void addMoney(int[] deposit)
-    {
-        for (int i = 0; i < 9; i++)
-        {
-            money[i] += deposit[i];
-        }
-
-        totalMoney = 0;
-        for (int i : new int[]{money[0], money[1] * 5, money[2] * 10, money[3] * 20, money[4] * 50, money[5] * 100, money[6] * 200, money[7] * 500, money[8] * 1000})
-        {
-            totalMoney += i;
-        }
-
-    }
-
-    /**
-     * This method inserts money into the machine
-     *
-     * @param inserted array of denominations to be inserted
-     */
-    public void insertMoney(int[] inserted)
-    {
-        // Adds the inserted money to the inserted array
-        for (int i = 0; i < 9; i++)
-        {
-            this.inserted[i] += inserted[i];
-        }
-        // Calculates the total inserted money
-        for (int i : new int[]{inserted[0], inserted[1] * 5, inserted[2] * 10, inserted[3] * 20, inserted[4] * 50, inserted[5] * 100, inserted[6] * 200, inserted[7] * 500, inserted[8] * 1000})
-        {
-            totalInserted += i;
-        }
-    }
-
-    /**
-     * This method collects all the money inside the vending machine and removes it from the array of change
-     *
-     */
-    public void collectMoney()
-    {
-        for (int i = 0; i < 9; i++)
-        {
-            money[i] = 0;
-        }
-
-        totalMoney = 0;
-    }
 
     /**
      * This method displays the items sold and the total sales for each item
