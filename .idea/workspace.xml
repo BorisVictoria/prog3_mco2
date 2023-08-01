@@ -4,20 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82bea4a4-91b0-4385-8cf2-eb72fe692f93" name="Changes" comment="add vending ui prototype">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/changeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/restockController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/specialController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/stockController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/prog3_mco2/change.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/prog3_mco2/restock.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/prog3_mco2/special.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/prog3_mco2/stock.fxml" afterDir="false" />
+    <list default="true" id="82bea4a4-91b0-4385-8cf2-eb72fe692f93" name="Changes" comment="create special vending machine class prototype">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/Money.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/RegularVendingMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/RegularVendingMachine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/balanceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/balanceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/prog3_mco2/balance.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/prog3_mco2/balance.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/prog3_mco2/create.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/prog3_mco2/create.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/prog3_mco2/display.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/prog3_mco2/display.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/changeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/changeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/createController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/createController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/displayController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/displayController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/mainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/mainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/maintenanceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/maintenanceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/restockController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/restockController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/specialController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/specialController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/stockController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/stockController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/testController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/testController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/vendingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/vendingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/prog3_mco2/change.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/prog3_mco2/change.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/prog3_mco2/restock.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/prog3_mco2/restock.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/prog3_mco2/special.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/prog3_mco2/special.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/prog3_mco2/stock.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/prog3_mco2/stock.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/prog3_mco2/vending.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/prog3_mco2/vending.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -28,8 +34,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -63,6 +69,11 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.example.prog3_mco2" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.prog3_mco2.Main" />
@@ -99,7 +110,8 @@
       <workItem from="1690719145247" duration="1624000" />
       <workItem from="1690720786213" duration="415000" />
       <workItem from="1690721212817" duration="3502000" />
-      <workItem from="1690724729168" duration="7506000" />
+      <workItem from="1690724729168" duration="8266000" />
+      <workItem from="1690847708469" duration="8252000" />
     </task>
     <task id="LOCAL-00001" summary="GUI prototype">
       <created>1690711564913</created>
@@ -115,7 +127,42 @@
       <option name="project" value="LOCAL" />
       <updated>1690719844771</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="ui revision">
+      <created>1690734495693</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1690734495693</updated>
+    </task>
+    <task id="LOCAL-00004" summary="remove presets for vending machine">
+      <created>1690847944489</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1690847944489</updated>
+    </task>
+    <task id="LOCAL-00005" summary="fix Transaction missing access modifier">
+      <created>1690849641001</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1690849641001</updated>
+    </task>
+    <task id="LOCAL-00006" summary="fix Slot wrong restock logic">
+      <created>1690849666275</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1690849666275</updated>
+    </task>
+    <task id="LOCAL-00007" summary="create special vending machine class prototype">
+      <created>1690849716802</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1690849716802</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -148,6 +195,11 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="GUI prototype" />
     <MESSAGE value="add vending ui prototype" />
-    <option name="LAST_COMMIT_MESSAGE" value="add vending ui prototype" />
+    <MESSAGE value="ui revision" />
+    <MESSAGE value="remove presets for vending machine" />
+    <MESSAGE value="fix Transaction missing access modifier" />
+    <MESSAGE value="fix Slot wrong restock logic" />
+    <MESSAGE value="create special vending machine class prototype" />
+    <option name="LAST_COMMIT_MESSAGE" value="create special vending machine class prototype" />
   </component>
 </project>

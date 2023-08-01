@@ -16,11 +16,11 @@
          <font>
             <Font name="Segoe UI Semilight" size="16.0" />
          </font></Button>
-        <Button layoutX="73.0" layoutY="196.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="213.0" text="Stock" textAlignment="CENTER">
+        <Button layoutX="73.0" layoutY="196.0" mnemonicParsing="false" onAction="#initStock" prefHeight="39.0" prefWidth="213.0" text="Stock" textAlignment="CENTER">
          <font>
             <Font name="Segoe UI Semilight" size="16.0" />
          </font></Button>
-      <Button layoutX="313.0" layoutY="196.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="213.0" text="Restock" textAlignment="CENTER">
+      <Button layoutX="313.0" layoutY="196.0" mnemonicParsing="false" onAction="#initRestock" prefHeight="39.0" prefWidth="213.0" text="Restock" textAlignment="CENTER">
          <font>
             <Font name="Segoe UI Semilight" size="16.0" />
          </font>
@@ -30,7 +30,7 @@
             <Font name="Segoe UI Semilight" size="16.0" />
          </font>
       </Button>
-      <Button layoutX="313.0" layoutY="258.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="213.0" text="Change Item Attributes" textAlignment="CENTER">
+      <Button layoutX="313.0" layoutY="258.0" mnemonicParsing="false" onAction="#initChange" prefHeight="39.0" prefWidth="213.0" text="Change Item Attributes" textAlignment="CENTER">
          <font>
             <Font name="Segoe UI Semilight" size="16.0" />
          </font>
