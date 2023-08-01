@@ -12,21 +12,39 @@
                 <Font name="Segoe UI Semilight" size="36.0" />
             </font>
         </Label>
-        <Button layoutX="139.0" layoutY="303.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="321.0" text="Create Special Vending Machine" textAlignment="CENTER">
+        <Button layoutX="137.0" layoutY="340.0" mnemonicParsing="false" onAction="#createSpecial" prefHeight="39.0" prefWidth="327.0" text="Create Special Vending Machine" textAlignment="CENTER">
          <font>
             <Font name="Segoe UI Semilight" size="16.0" />
          </font></Button>
-        <Button layoutX="138.0" layoutY="353.0" mnemonicParsing="false" onAction="#exit" prefHeight="39.0" prefWidth="327.0" text="Exit" textAlignment="CENTER">
+        <Button layoutX="136.0" layoutY="388.0" mnemonicParsing="false" onAction="#exit" prefHeight="39.0" prefWidth="327.0" text="Exit" textAlignment="CENTER">
          <font>
             <Font name="Segoe UI Semilight" size="16.0" />
          </font></Button>
       <Line endX="300.0" layoutX="218.0" layoutY="54.0" startX="-129.0" />
       <Line endX="300.0" layoutX="218.0" layoutY="124.0" startX="-129.0" />
       <Line endX="300.0" layoutX="214.0" layoutY="444.0" startX="-129.0" />
-      <Button layoutX="139.0" layoutY="203.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="321.0" text="Create Regular Vending Machine" textAlignment="CENTER">
+      <Button layoutX="137.0" layoutY="293.0" mnemonicParsing="false" onAction="#createRegular" prefHeight="39.0" prefWidth="327.0" text="Create Regular Vending Machine" textAlignment="CENTER">
          <font>
             <Font name="Segoe UI Semilight" size="16.0" />
          </font>
       </Button>
+      <Label layoutX="136.0" layoutY="155.0" text="Name:">
+         <font>
+            <Font name="Segoe UI Semilight" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="136.0" layoutY="198.0" text="Slots:">
+         <font>
+            <Font name="Segoe UI Semilight" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="136.0" layoutY="238.0" text="Capacity:">
+         <font>
+            <Font name="Segoe UI Semilight" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="nameField" layoutX="229.0" layoutY="155.0" />
+      <TextField fx:id="numSlotsField" layoutX="229.0" layoutY="198.0" />
+      <TextField fx:id="numCapacityField" layoutX="229.0" layoutY="238.0" />
     </children>
 </AnchorPane>
