@@ -28,17 +28,17 @@
         </Label>
         <ChoiceBox fx:id="choiceBox" layoutX="97.0" layoutY="201.0" onAction="#list" prefWidth="150.0" />
         <Region layoutX="288.0" layoutY="151.0" prefHeight="218.0" prefWidth="234.0" style="-fx-border-color: black;" />
-        <Label alignment="CENTER_RIGHT" layoutX="300.0" layoutY="164.0" text="Name:">
+        <Label alignment="CENTER_RIGHT" layoutX="300.0" layoutY="160.0" text="Name:">
             <font>
                 <Font name="Segoe UI Semilight" size="16.0" />
             </font>
         </Label>
-        <Label alignment="CENTER_RIGHT" layoutX="300.0" layoutY="214.0" text="Calories:">
+        <Label alignment="CENTER_RIGHT" layoutX="300.0" layoutY="211.0" text="Calories:">
             <font>
                 <Font name="Segoe UI Semilight" size="16.0" />
             </font>
         </Label>
-        <Label alignment="CENTER_RIGHT" layoutX="300.0" layoutY="189.0" text="Price:">
+        <Label alignment="CENTER_RIGHT" layoutX="300.0" layoutY="186.0" text="Price:">
             <font>
                 <Font name="Segoe UI Semilight" size="16.0" />
             </font>
@@ -48,22 +48,22 @@
                 <Font name="Segoe UI Semilight" size="16.0" />
             </font>
         </Label>
-        <Label fx:id="lbl1" layoutX="368.0" layoutY="164.0" text="Name Field">
+        <Label fx:id="lbl1" layoutX="396.0" layoutY="161.0">
             <font>
                 <Font name="Segoe UI Semilight" size="16.0" />
             </font>
         </Label>
-        <Label fx:id="lbl2" layoutX="370.0" layoutY="189.0" text="0">
+        <Label fx:id="lbl2" layoutX="396.0" layoutY="186.0">
             <font>
                 <Font name="Segoe UI Semilight" size="16.0" />
             </font>
         </Label>
-        <Label fx:id="lbl3" layoutX="370.0" layoutY="214.0" text="0">
+        <Label fx:id="lbl3" layoutX="396.0" layoutY="210.0">
             <font>
                 <Font name="Segoe UI Semilight" size="16.0" />
             </font>
         </Label>
-        <Label fx:id="lbl5" layoutX="301.0" layoutY="273.0" prefHeight="93.0" prefWidth="213.0" text="Description Field">
+        <Label fx:id="lbl5" layoutX="299.0" layoutY="264.0" prefHeight="93.0" prefWidth="213.0" text="Description Field">
             <font>
                 <Font name="Segoe UI Semilight" size="16.0" />
             </font>
@@ -77,12 +77,22 @@
          </font>
       </Label>
       <Spinner fx:id="spn1" layoutX="98.0" layoutY="319.0" />
-      <Label layoutX="300.0" layoutY="239.0" text="Quantity:">
+      <Label layoutX="300.0" layoutY="236.0" text="Quantity:">
          <font>
             <Font name="Segoe UI Semilight" size="16.0" />
          </font>
       </Label>
-      <Label fx:id="lbl4" layoutX="370.0" layoutY="239.0" text="0">
+      <Label fx:id="lbl4" layoutX="396.0" layoutY="236.0">
+         <font>
+            <Font name="Segoe UI Semilight" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="300.0" layoutY="332.0" text="Type:">
+         <font>
+            <Font name="Segoe UI Semilight" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbl6" layoutX="396.0" layoutY="331.0">
          <font>
             <Font name="Segoe UI Semilight" size="16.0" />
          </font>

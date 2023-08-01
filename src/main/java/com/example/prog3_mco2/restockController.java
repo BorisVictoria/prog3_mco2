@@ -38,6 +38,9 @@ public class restockController implements Initializable {
     private Label lbl5;
 
     @FXML
+    private Label lbl6;
+
+    @FXML
     private ChoiceBox<String> choiceBox;
 
     @FXML
@@ -53,7 +56,7 @@ public class restockController implements Initializable {
         String name = choiceBox.getValue();
         int qty = spn1.getValue();
 
-        for (int i = 0; i < vm.getNumSlots(); i++)
+        for (int i = 0; i < vm.getSlotList().size(); i++)
         {
             if (choiceBox.getItems().get(i).equals(name)) {
                 if (!vm.restock(i, qty))
@@ -80,7 +83,7 @@ public class restockController implements Initializable {
     {
         String name = choiceBox.getValue();
 
-        for (int i = 0; i < vm.getNumSlots(); i++) {
+        for (int i = 0; i < vm.getSlotList().size(); i++) {
             if (choiceBox.getItems().get(i).equals(name))
             {
                 lbl1.setText(vm.getSlotList().get(i).getName());
@@ -88,6 +91,7 @@ public class restockController implements Initializable {
                 lbl3.setText(Integer.toString(vm.getSlotList().get(i).getItemCalories()));
                 lbl4.setText(Integer.toString(vm.getSlotList().get(i).getItemQuantity()));
                 lbl5.setText(vm.getSlotList().get(i).getItemDescription());
+                lbl6.setText(String.valueOf(vm.getSlotList().get(i).getItem().getClass()));
             }
         }
     }
@@ -106,7 +110,7 @@ public class restockController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
-        for (int i = 0; i < vm.getNumSlots(); i++)
+        for (int i = 0; i < vm.getSlotList().size(); i++)
             choiceBox.getItems().add(vm.getSlotList().get(i).toString());
 
         SpinnerValueFactory<Integer> valueFactory1 = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 10);
