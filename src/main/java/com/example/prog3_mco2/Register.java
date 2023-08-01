@@ -1,18 +1,20 @@
 package com.example.prog3_mco2;
 
+import java.util.ArrayList;
+
 public class Register
 {
-    int[] money;
+    ArrayList<Bill> bills;
     int total;
 
     public Register()
     {
-        money = new int[9];
+        bills = new ArrayList<Bill>();
         total = 0;
 
     }
 
-    public void addMoney(int[] deposit)
+    public void addMoney(ArrayList<Bill> deposit)
     {
         for (int i = 0; i < 9; i++)
         {
@@ -26,7 +28,7 @@ public class Register
         }
     }
 
-    public boolean removeMoney(int[] withdraw)
+    public boolean removeMoney(ArrayList<Bill> withdraw)
     {
         for (int i = 0; i < 9; i++)
         {
