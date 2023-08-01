@@ -11,55 +11,32 @@ import java.util.ArrayList;
 
 public class RegularVendingMachine
 {
-    private String name; // name of the vending machine
-    private final ArrayList<Slot> SLOT_LIST; // list of slots of the vending machine
-    private final ArrayList<Transaction> TRANSACTION_LIST; // list of transactions of the vending machine
-    private final ArrayList<Item> ITEM_LIST; // list of available items to be sold by the vending machine
-    private int totalMoney; // total amount of change of the vending machine
-    private int totalInserted; // total amount of money inserted by a buyer to the vending machine
-    private int[] money; // array of change in multiple denominations
-    private int[] inserted; // array of payments in multiple denominations
-
-    /**
-     * Constructor for objects of class RegularVendingMachine
-     *
-     * @param itemList the list of items available to be sold
-     * @param name the name of the vending machine
-     */
-    public RegularVendingMachine(ArrayList<Item> itemList, String name)
-    {
-        this.name = name;
-        SLOT_LIST = new ArrayList<Slot>();
-        TRANSACTION_LIST = new ArrayList<Transaction>();
-        this.ITEM_LIST = itemList;
-        totalMoney = 0;
-        totalInserted = 0;
-        money = new int[9];
-        inserted = new int[9];
-
-    }
+    protected String name; // name of the vending machine
+    protected int numSlots; // number of slots of the vending machine
+    protected int numCapacity;
+    protected final ArrayList<Slot> SLOT_LIST; // list of slots of the vending machine
+    protected final ArrayList<Transaction> TRANSACTION_LIST; // list of transactions of the vending machine
+    protected int totalMoney; // total amount of change of the vending machine
+    protected int totalInserted; // total amount of money inserted by a buyer to the vending machine
+    protected int[] money; // array of change in multiple denominations
+    protected int[] inserted; // array of payments in multiple denominations
 
     /**
      * Constructor for objects of class RegularVendingMachine
      *
      * @param name the name of the vending machine
-     * @param itemList the list of items available to be sold
+     *
      */
-    public RegularVendingMachine(String name, ArrayList<Item> itemList)
+    public RegularVendingMachine(String name, int numSlots, int numCapacity)
     {
         this.name = name;
         SLOT_LIST = new ArrayList<Slot>();
         TRANSACTION_LIST = new ArrayList<Transaction>();
-        this.ITEM_LIST = itemList;
         totalMoney = 0;
         totalInserted = 0;
         money = new int[9];
         inserted = new int[9];
 
-        for (Item i: itemList)
-        {
-            SLOT_LIST.add(new Slot(i));
-        }
     }
 
     /**
@@ -170,15 +147,19 @@ public class RegularVendingMachine
     /**
      * This method stocks a new item to the vending machine
      *
-     * @param itemIndex the index of the item to be stocked
+     * @param name the name of the item to be stocked
+     * @param price the price of the to be stocked
+     * @param description the description of the item to be stocked
+     * @param calories the calories of the item to be stocked
      *
      * @return true if the item was added, false if the item was not added
      */
-    public boolean stock(int itemIndex)
+    public boolean stock(String name, int price, String description, int calories)
     {
-        String name = ITEM_LIST.get(itemIndex).getName();
 
-        if (SLOT_LIST.size() == 8)
+        Item newItem = new Item(name, price, description, calories);
+
+        if (SLOT_LIST.size() >= numSlots)
             return false;
         else
         {
@@ -188,7 +169,7 @@ public class RegularVendingMachine
                     return false;
 
             }
-            SLOT_LIST.add(new Slot(ITEM_LIST.get(itemIndex)));
+            SLOT_LIST.add(new Slot(newItem));
         }
 
         TRANSACTION_LIST.clear();
@@ -198,14 +179,17 @@ public class RegularVendingMachine
     /**
      * This method replaces an item in the vending machine
      *
-     * @param slotIndex the index of the item to be replaced
-     * @param itemIndex the index of the item to replace the item with
+     * @param name the name of the item to be stocked
+     * @param price the price of the to be stocked
+     * @param description the description of the item to be stocked
+     * @param calories the calories of the item to be stocked
+     * @param slotIndex the slot index of the item to be replaced
      *
      * @return true if the item was replaced, false if the item was not replaced
      */
-    public boolean replace(int slotIndex, int itemIndex)
+    public boolean replace(String name, int price, String description, int calories, int slotIndex)
     {
-        String name = ITEM_LIST.get(itemIndex).getName();
+        Item newItem = new Item(name, price, description, calories);
 
         // If the item to be replaced is the same as the item to be replaced with then return false
         for (int i = 0; i < SLOT_LIST.size(); i++)
@@ -214,7 +198,7 @@ public class RegularVendingMachine
                 return false;
 
         }
-        SLOT_LIST.set(slotIndex, new Slot(ITEM_LIST.get(itemIndex)));
+        SLOT_LIST.set(slotIndex, new Slot(newItem));
 
         TRANSACTION_LIST.clear();
         return true;
@@ -242,12 +226,12 @@ public class RegularVendingMachine
     public boolean restock(int slotIndex, int quantity)
     {
         int total = quantity + SLOT_LIST.get(slotIndex).getItemQuantity();
-        // If the total quantity of the item is greater than 10, the item is not restocked
-        if (total >= 10)
+        // If the total quantity of the item is greater than numCapacity, the item is not restocked
+        if (total > numCapacity)
         {
             return false;
         }
-        // If the total quantity of the item is less than 10, the item is restocked by the quantity specified
+        // If the total quantity of the item is less than numCapacity, the item is restocked by the quantity specified
         else
         {
             for (int i = 0; i < quantity; i++)
@@ -347,16 +331,6 @@ public class RegularVendingMachine
     public ArrayList<Slot> getSlotList()
     {
         return SLOT_LIST;
-    }
-
-    /**
-     * This method returns the list of items in the vending machine
-     *
-     * @return list of items available to be sold
-     */
-    public ArrayList<Item> getItemList()
-    {
-        return ITEM_LIST;
     }
 
     /**
