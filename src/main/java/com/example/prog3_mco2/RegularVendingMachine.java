@@ -25,6 +25,8 @@ public class RegularVendingMachine {
      */
     public RegularVendingMachine(String name, int numSlots, int numCapacity) {
         this.name = name;
+        this.numSlots = numSlots;
+        this.numCapacity = numCapacity;
         SLOT_LIST = new ArrayList<Slot>();
         TRANSACTION_LIST = new ArrayList<Transaction>();
         register = new Register();
@@ -317,6 +319,16 @@ public class RegularVendingMachine {
     public Register getInserted()
     {
         return inserted;
+    }
+
+    public int getNumSlots()
+    {
+        return numSlots;
+    }
+
+    public int getNumCapacity()
+    {
+        return numCapacity;
     }
 
     /**

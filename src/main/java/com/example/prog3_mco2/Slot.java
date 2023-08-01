@@ -188,5 +188,9 @@ public class Slot
             return true;
         }
     }
+    public String toString()
+    {
+        return ITEM.getName();
+    }
 
 }
