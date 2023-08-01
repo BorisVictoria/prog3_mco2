@@ -11,7 +11,7 @@ public class Bill
 
     public int getValue()
     {
-
+        return value;
     }
 
 }
