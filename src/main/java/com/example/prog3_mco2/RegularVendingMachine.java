@@ -32,11 +32,10 @@ public class RegularVendingMachine {
 
     }
 
-
-    public int[] dispenseChange(int slotIndex)
+    public ArrayList<ArrayList<Bill>> dispenseChange(int slotIndex)
     {
         int totalChange;
-        int[] change;
+        ArrayList<ArrayList<Bill>> change;
         int temp;
 
         // checks if total inserted is less than the price of the item
@@ -45,35 +44,67 @@ public class RegularVendingMachine {
 
         // calculates the total change
         totalChange = inserted.getTotal() - SLOT_LIST.get(slotIndex).getItemPrice();
-        change = new int[9];
+        change = new ArrayList<ArrayList<Bill>>();
+        for (int i = 0; i < 9; i++)
+        {
+            change.set(i, new ArrayList<Bill>());
+        }
         temp = totalChange;
 
-        change[8] = Math.min(temp / 1000, register.getDenominations()[8]);
-        temp -= change[8] * 1000;
+        for (int i = 0; i < Math.min(temp / 1000, register.getDenominations().get(8).size()); i++)
+        {
+            change.get(8).add(new Bill(1000));
+        }
+        temp -= change.get(8).size() * 1000;
 
-        change[7] = Math.min(temp / 500, register.getDenominations()[7]);
-        temp -= change[7] * 500;
+        for (int i = 0; i < Math.min(temp / 500, register.getDenominations().get(7).size()); i++)
+        {
+            change.get(7).add(new Bill(500));
+        }
+        temp -= change.get(7).size() * 500;
 
-        change[6] = Math.min(temp / 200, register.getDenominations()[6]);
-        temp -= change[6] * 200;
+        for (int i = 0; i < Math.min(temp / 200, register.getDenominations().get(6).size()); i++)
+        {
+            change.get(6).add(new Bill(200));
+        }
+        temp -= change.get(6).size() * 200;
 
-        change[5] = Math.min(temp / 100, register.getDenominations()[5]);
-        temp -= change[5] * 100;
+        for (int i = 0; i < Math.min(temp / 100, register.getDenominations().get(5).size()); i++)
+        {
+            change.get(5).add(new Bill(100));
+        }
+        temp -= change.get(5).size() * 100;
 
-        change[4] = Math.min(temp / 50, register.getDenominations()[4]);
-        temp -= change[4] * 50;
+        for (int i = 0; i < Math.min(temp / 50, register.getDenominations().get(4).size()); i++)
+        {
+            change.get(4).add(new Bill(50));
+        }
+        temp -= change.get(4).size() * 50;
 
-        change[3] = Math.min(temp / 20, register.getDenominations()[3]);
-        temp -= change[3] * 20;
+        for (int i = 0; i < Math.min(temp / 20, register.getDenominations().get(3).size()); i++)
+        {
+            change.get(3).add(new Bill(20));
+        }
+        temp -= change.get(3).size() * 20;
 
-        change[2] = Math.min(temp / 10, register.getDenominations()[2]);
-        temp -= change[2] * 10;
+        for (int i = 0; i < Math.min(temp / 10, register.getDenominations().get(2).size()); i++)
+        {
+            change.get(2).add(new Bill(10));
+        }
+        temp -= change.get(2).size() * 10;
 
-        change[1] = Math.min(temp / 5, register.getDenominations()[1]);
-        temp -= change[1] * 5;
+        for (int i = 0; i < Math.min(temp / 5, register.getDenominations().get(1).size()); i++)
+        {
+            change.get(1).add(new Bill(5));
+        }
+        temp -= change.get(1).size() * 5;
 
-        change[0] = Math.min(temp, register.getDenominations()[0]);
-        temp -= change[0];
+        for (int i = 0; i < Math.min(temp, register.getDenominations().get(0).size()); i++)
+        {
+            change.get(0).add(new Bill(1));
+        }
+        temp -= change.get(0).size();
+
         // checks if there is enough change
         if (temp != 0)
             return null;
@@ -87,9 +118,9 @@ public class RegularVendingMachine {
      *
      * @return true if the item was dispensed, false if the item was not dispensed
      */
-    public int[] dispenseItem(int slotIndex)
+    public ArrayList<ArrayList<Bill>> dispenseItem(int slotIndex)
     {
-        int[] change = dispenseChange(slotIndex);
+        ArrayList<ArrayList<Bill>> change = dispenseChange(slotIndex);
 
         if (change == null)
             return null;
