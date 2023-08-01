@@ -13,6 +13,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class createController
 {
@@ -71,6 +72,21 @@ public class createController
             alert.setHeaderText("Input Error!");
             alert.setContentText("Please try again");
             alert.show();
+        }
+
+        ArrayList<Item> itemList = new ArrayList<Item>();
+        itemList.add(new Item("Rice", 20, "Carbohydrates", 200));
+        itemList.add(new Item("Soy Sauce", 10, "Condiment", 20));
+        itemList.add(new Item("Omelette", 50, "Main Dish", 100));
+        itemList.add(new Item("Crispy Onions", 20, "Condiment", 50));
+        itemList.add(new Item("Soda", 50, "Drink", 100));
+        itemList.add(new Item("Orange Juice", 100, "Drink", 150));
+        itemList.add(new Item("Banana", 20, "Snack", 50));
+        itemList.add(new Item("Pineapple", 50, "Snack", 50));
+
+        for (int i = 0; i < 8; i++)
+        {
+            vm.stock(itemList.get(i).getName(), itemList.get(i).getPrice(), itemList.get(i).getDescription(), itemList.get(i).getCalories());
         }
     }
 

@@ -19,7 +19,6 @@ public class restockController {
 
     private RegularVendingMachine vm;
 
-
     @FXML
     private Button btn1;
 

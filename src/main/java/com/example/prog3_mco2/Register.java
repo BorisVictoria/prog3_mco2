@@ -12,7 +12,7 @@ public class Register
         bills = new ArrayList<ArrayList<Bill>>();
         for (int i = 0; i < 9; i++)
         {
-            bills.set(i, new ArrayList<Bill>()) ;
+            bills.add(new ArrayList<Bill>());
         }
 
         total = 0;
@@ -24,7 +24,7 @@ public class Register
 
         for (int i = 0; i < deposit.get(0).size(); i++)
         {
-                bills.get(0).add(new Bill(1));
+            bills.get(0).add(new Bill(1));
         }
 
         for (int i = 0; i < deposit.get(1).size(); i++)
