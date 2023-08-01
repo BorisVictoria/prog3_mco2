@@ -57,22 +57,22 @@
             <Font name="Segoe UI Semilight" size="16.0" />
          </font>
       </Label>
-      <Label fx:id="lbl1" layoutX="368.0" layoutY="164.0" text="Name Field">
+      <Label fx:id="lbl1" layoutX="389.0" layoutY="164.0">
          <font>
             <Font name="Segoe UI Semilight" size="16.0" />
          </font>
       </Label>
-      <Label fx:id="lbl2" layoutX="370.0" layoutY="189.0" text="0">
+      <Label fx:id="lbl2" layoutX="389.0" layoutY="189.0">
          <font>
             <Font name="Segoe UI Semilight" size="16.0" />
          </font>
       </Label>
-      <Label fx:id="lbl3" layoutX="370.0" layoutY="214.0" text="0">
+      <Label fx:id="lbl3" layoutX="389.0" layoutY="214.0">
          <font>
             <Font name="Segoe UI Semilight" size="16.0" />
          </font>
       </Label>
-      <Label fx:id="lbl5" layoutX="300.0" layoutY="264.0" prefHeight="93.0" prefWidth="213.0" text="Description Field">
+      <Label fx:id="lbl5" layoutX="300.0" layoutY="264.0" prefHeight="93.0" prefWidth="213.0">
          <font>
             <Font name="Segoe UI Semilight" size="16.0" />
          </font>

@@ -62,7 +62,7 @@ public class changeController implements Initializable{
         {
             int price = Integer.parseInt(txt1.getText());
 
-            for (int i = 0; i < vm.getNumSlots(); i++)
+            for (int i = 0; i < vm.getSlotList().size(); i++)
             {
                 if (choiceBox.getItems().get(i).equals(name))
                 {
@@ -93,7 +93,7 @@ public class changeController implements Initializable{
         {
             int calories = Integer.parseInt(txt2.getText());
 
-            for (int i = 0; i < vm.getNumSlots(); i++)
+            for (int i = 0; i < vm.getSlotList().size(); i++)
             {
                 if (choiceBox.getItems().get(i).equals(name))
                 {
@@ -122,7 +122,7 @@ public class changeController implements Initializable{
 
         try
         {
-            for (int i = 0; i < vm.getNumSlots(); i++)
+            for (int i = 0; i < vm.getSlotList().size(); i++)
             {
                 if (choiceBox.getItems().get(i).equals(name))
                 {
@@ -153,7 +153,7 @@ public class changeController implements Initializable{
     {
         String name = choiceBox.getValue();
 
-        for (int i = 0; i < vm.getNumSlots(); i++) {
+        for (int i = 0; i < vm.getSlotList().size(); i++) {
             if (choiceBox.getItems().get(i).equals(name))
             {
                 lbl1.setText(vm.getSlotList().get(i).getName());
@@ -177,7 +177,7 @@ public class changeController implements Initializable{
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
-        for (int i = 0; i < vm.getNumSlots(); i++)
+        for (int i = 0; i < vm.getSlotList().size(); i++)
             choiceBox.getItems().add(vm.getSlotList().get(i).toString());
 
         choiceBox.getSelectionModel().selectFirst();
