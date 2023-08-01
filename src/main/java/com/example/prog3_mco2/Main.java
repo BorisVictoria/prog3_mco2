@@ -12,8 +12,7 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
 
-        //RegularVendingMachine vm = null;
-        RegularVendingMachine vm = new RegularVendingMachine("k", 7,7);
+        RegularVendingMachine vm = null;
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("main.fxml"));
         loader.setControllerFactory(controllerClass -> new mainController(vm));
