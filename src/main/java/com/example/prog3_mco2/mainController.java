@@ -22,12 +22,6 @@ public class mainController
 
     private RegularVendingMachine vm;
 
-    @FXML
-    private Button btn1;
-
-    @FXML
-    private Button btn2;
-
     public mainController(RegularVendingMachine vm)
     {
         this.vm = vm;
@@ -58,10 +52,11 @@ public class mainController
         }
         else
         {
-            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Information");
             alert.setHeaderText("Uninitialized Vending Machine");
             alert.setContentText("Please create a vending machine first!");
+            alert.show();
         }
 
 
