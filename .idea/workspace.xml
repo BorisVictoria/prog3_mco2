@@ -1,20 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="8" />
+    <option name="CUSTOM_SCOPE_NAME" value="Model" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82bea4a4-91b0-4385-8cf2-eb72fe692f93" name="Changes" comment="fix bug at spinner adding wrong item FINAL PROTOTYPE I HOPE SANA">
+    <list default="true" id="82bea4a4-91b0-4385-8cf2-eb72fe692f93" name="Changes" comment="fix topping edge case">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/Addon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/Addon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/Base.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/Base.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/Bill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/Bill.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/Register.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/RegularVendingMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/RegularVendingMachine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/Slot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/Slot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/SpecialVendingMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/SpecialVendingMachine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/Transaction.java" afterDir="false" />
     </list>
     <list id="9252fe7c-efd1-4f1e-8973-1f69f58fd449" name="Changes by deezb" comment="">
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/Bill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/Bill.java" afterDir="false" />
@@ -40,41 +36,38 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/Bill.java">
-      <ranges>
-        <range start1="2" end1="2" start2="2" end2="9" changelist="82bea4a4-91b0-4385-8cf2-eb72fe692f93" />
-        <range start1="4" end1="5" start2="11" end2="12" changelist="9252fe7c-efd1-4f1e-8973-1f69f58fd449" />
-        <range start1="6" end1="6" start2="13" end2="18" changelist="9252fe7c-efd1-4f1e-8973-1f69f58fd449" />
-        <range start1="11" end1="11" start2="23" end2="28" changelist="9252fe7c-efd1-4f1e-8973-1f69f58fd449" />
-      </ranges>
-    </file>
     <file path="$PROJECT_DIR$/src/main/java/com/example/prog3_mco2/Register.java">
       <ranges>
-        <range start1="4" end1="4" start2="4" end2="10" changelist="82bea4a4-91b0-4385-8cf2-eb72fe692f93" />
-        <range start1="6" end1="8" start2="12" end2="14" changelist="9252fe7c-efd1-4f1e-8973-1f69f58fd449" />
-        <range start1="9" end1="9" start2="15" end2="19" changelist="9252fe7c-efd1-4f1e-8973-1f69f58fd449" />
-        <range start1="21" end1="23" start2="31" end2="37" changelist="9252fe7c-efd1-4f1e-8973-1f69f58fd449" />
-        <range start1="24" end1="26" start2="38" end2="39" changelist="e39d3017-db9a-4a92-9c92-9cfcc063b656" />
-        <range start1="29" end1="31" start2="42" end2="43" changelist="e39d3017-db9a-4a92-9c92-9cfcc063b656" />
-        <range start1="34" end1="36" start2="46" end2="47" changelist="e39d3017-db9a-4a92-9c92-9cfcc063b656" />
-        <range start1="39" end1="41" start2="50" end2="51" changelist="e39d3017-db9a-4a92-9c92-9cfcc063b656" />
-        <range start1="44" end1="46" start2="54" end2="55" changelist="e39d3017-db9a-4a92-9c92-9cfcc063b656" />
-        <range start1="49" end1="51" start2="58" end2="59" changelist="e39d3017-db9a-4a92-9c92-9cfcc063b656" />
-        <range start1="54" end1="56" start2="62" end2="63" changelist="e39d3017-db9a-4a92-9c92-9cfcc063b656" />
-        <range start1="59" end1="61" start2="66" end2="67" changelist="e39d3017-db9a-4a92-9c92-9cfcc063b656" />
-        <range start1="63" end1="65" start2="69" end2="70" changelist="e39d3017-db9a-4a92-9c92-9cfcc063b656" />
-        <range start1="69" end1="71" start2="74" end2="75" changelist="e39d3017-db9a-4a92-9c92-9cfcc063b656" />
-        <range start1="75" end1="75" start2="79" end2="85" changelist="9252fe7c-efd1-4f1e-8973-1f69f58fd449" />
-        <range start1="80" end1="82" start2="90" end2="91" changelist="9252fe7c-efd1-4f1e-8973-1f69f58fd449" />
-        <range start1="94" end1="95" start2="103" end2="104" changelist="9252fe7c-efd1-4f1e-8973-1f69f58fd449" />
-        <range start1="103" end1="103" start2="112" end2="116" changelist="9252fe7c-efd1-4f1e-8973-1f69f58fd449" />
-        <range start1="107" end1="108" start2="120" end2="121" changelist="9252fe7c-efd1-4f1e-8973-1f69f58fd449" />
-        <range start1="109" end1="110" start2="122" end2="122" changelist="9252fe7c-efd1-4f1e-8973-1f69f58fd449" />
-        <range start1="113" end1="114" start2="125" end2="130" changelist="9252fe7c-efd1-4f1e-8973-1f69f58fd449" />
-        <range start1="115" end1="116" start2="131" end2="132" changelist="9252fe7c-efd1-4f1e-8973-1f69f58fd449" />
-        <range start1="118" end1="118" start2="134" end2="139" changelist="9252fe7c-efd1-4f1e-8973-1f69f58fd449" />
+        <range start1="12" end1="14" start2="12" end2="14" changelist="9252fe7c-efd1-4f1e-8973-1f69f58fd449" />
+        <range start1="15" end1="15" start2="15" end2="19" changelist="9252fe7c-efd1-4f1e-8973-1f69f58fd449" />
+        <range start1="27" end1="29" start2="31" end2="37" changelist="9252fe7c-efd1-4f1e-8973-1f69f58fd449" />
+        <range start1="30" end1="32" start2="38" end2="39" changelist="e39d3017-db9a-4a92-9c92-9cfcc063b656" />
+        <range start1="35" end1="37" start2="42" end2="43" changelist="e39d3017-db9a-4a92-9c92-9cfcc063b656" />
+        <range start1="40" end1="42" start2="46" end2="47" changelist="e39d3017-db9a-4a92-9c92-9cfcc063b656" />
+        <range start1="45" end1="47" start2="50" end2="51" changelist="e39d3017-db9a-4a92-9c92-9cfcc063b656" />
+        <range start1="50" end1="52" start2="54" end2="55" changelist="e39d3017-db9a-4a92-9c92-9cfcc063b656" />
+        <range start1="55" end1="57" start2="58" end2="59" changelist="e39d3017-db9a-4a92-9c92-9cfcc063b656" />
+        <range start1="60" end1="62" start2="62" end2="63" changelist="e39d3017-db9a-4a92-9c92-9cfcc063b656" />
+        <range start1="65" end1="67" start2="66" end2="67" changelist="e39d3017-db9a-4a92-9c92-9cfcc063b656" />
+        <range start1="69" end1="71" start2="69" end2="70" changelist="e39d3017-db9a-4a92-9c92-9cfcc063b656" />
+        <range start1="75" end1="77" start2="74" end2="75" changelist="e39d3017-db9a-4a92-9c92-9cfcc063b656" />
+        <range start1="81" end1="81" start2="79" end2="85" changelist="9252fe7c-efd1-4f1e-8973-1f69f58fd449" />
+        <range start1="86" end1="88" start2="90" end2="91" changelist="9252fe7c-efd1-4f1e-8973-1f69f58fd449" />
+        <range start1="100" end1="101" start2="103" end2="104" changelist="9252fe7c-efd1-4f1e-8973-1f69f58fd449" />
+        <range start1="109" end1="109" start2="112" end2="116" changelist="9252fe7c-efd1-4f1e-8973-1f69f58fd449" />
+        <range start1="113" end1="114" start2="120" end2="121" changelist="9252fe7c-efd1-4f1e-8973-1f69f58fd449" />
+        <range start1="115" end1="116" start2="122" end2="122" changelist="9252fe7c-efd1-4f1e-8973-1f69f58fd449" />
+        <range start1="119" end1="120" start2="125" end2="130" changelist="9252fe7c-efd1-4f1e-8973-1f69f58fd449" />
+        <range start1="121" end1="122" start2="131" end2="132" changelist="9252fe7c-efd1-4f1e-8973-1f69f58fd449" />
+        <range start1="124" end1="124" start2="134" end2="139" changelist="9252fe7c-efd1-4f1e-8973-1f69f58fd449" />
       </ranges>
     </file>
+  </component>
+  <component name="NamedScopeManager">
+    <scope name="Model" pattern="src:com.example.prog3_mco2.Addon||src:com.example.prog3_mco2.Base||src:com.example.prog3_mco2.Bill||src:com.example.prog3_mco2.Register||src:com.example.prog3_mco2.RegularVendingMachine||src:com.example.prog3_mco2.Item||src:com.example.prog3_mco2.Slot||src:com.example.prog3_mco2.Transaction||src:com.example.prog3_mco2.SpecialVendingMachine" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectId" id="2THZCAT3EIzGn8J29oswRjRu3WR" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -148,42 +141,10 @@
       <workItem from="1690724729168" duration="8266000" />
       <workItem from="1690847708469" duration="8252000" />
       <workItem from="1690856347404" duration="59233000" />
-      <workItem from="1690958839475" duration="29458000" />
-    </task>
-    <task id="LOCAL-00001" summary="GUI prototype">
-      <created>1690711564913</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1690711564913</updated>
-    </task>
-    <task id="LOCAL-00002" summary="add vending ui prototype">
-      <created>1690719844771</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1690719844771</updated>
-    </task>
-    <task id="LOCAL-00003" summary="ui revision">
-      <created>1690734495693</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1690734495693</updated>
-    </task>
-    <task id="LOCAL-00004" summary="remove presets for vending machine">
-      <created>1690847944489</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1690847944489</updated>
-    </task>
-    <task id="LOCAL-00005" summary="fix Transaction missing access modifier">
-      <created>1690849641001</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1690849641001</updated>
+      <workItem from="1690958839475" duration="32050000" />
+      <workItem from="1690994228850" duration="4163000" />
+      <workItem from="1691000448349" duration="1009000" />
+      <workItem from="1691001469135" duration="692000" />
     </task>
     <task id="LOCAL-00006" summary="fix Slot wrong restock logic">
       <created>1690849666275</created>
@@ -493,7 +454,42 @@
       <option name="project" value="LOCAL" />
       <updated>1690989379602</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="added javadoc comments">
+      <created>1690990826354</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1690990826355</updated>
+    </task>
+    <task id="LOCAL-00051" summary="added exit button">
+      <created>1690991219314</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1690991219314</updated>
+    </task>
+    <task id="LOCAL-00052" summary="ui consistency pass">
+      <created>1690994809364</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1690994809364</updated>
+    </task>
+    <task id="LOCAL-00053" summary="more comments">
+      <created>1690998769892</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1690998769892</updated>
+    </task>
+    <task id="LOCAL-00054" summary="fix topping edge case">
+      <created>1691001077383</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1691001077384</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -524,11 +520,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="MONEY OBJECTS DONE MY MY MY" />
-    <MESSAGE value="MONEY OBJECTS DONE MY MY MY MY" />
-    <MESSAGE value="restock done" />
-    <MESSAGE value="add remove item prototype" />
-    <MESSAGE value="finish change item attributes gui" />
     <MESSAGE value="fix maintenance font" />
     <MESSAGE value="add base and addon inherited from items" />
     <MESSAGE value="add remove gui and logic" />
@@ -549,6 +540,11 @@
     <MESSAGE value="prevent user from entering menus other than stock if there are no items" />
     <MESSAGE value="add flavor text" />
     <MESSAGE value="fix bug at spinner adding wrong item FINAL PROTOTYPE I HOPE SANA" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix bug at spinner adding wrong item FINAL PROTOTYPE I HOPE SANA" />
+    <MESSAGE value="added javadoc comments" />
+    <MESSAGE value="added exit button" />
+    <MESSAGE value="ui consistency pass" />
+    <MESSAGE value="more comments" />
+    <MESSAGE value="fix topping edge case" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix topping edge case" />
   </component>
 </project>
