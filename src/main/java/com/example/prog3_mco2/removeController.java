@@ -62,7 +62,7 @@ public class removeController implements Initializable {
                 alert.setHeaderText("Item removed!");
                 alert.setContentText("Please click OK to continue");
                 alert.show();
-                choiceBox.getItems().removeAll();
+                choiceBox.getItems().clear();
                 for (int j = 0; j < vm.getSlotList().size(); j++)
                     choiceBox.getItems().add(vm.getSlotList().get(j).toString());
 

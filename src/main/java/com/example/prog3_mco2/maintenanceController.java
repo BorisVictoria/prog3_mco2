@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
@@ -59,23 +60,48 @@ public class maintenanceController {
     }
 
     public void initRestock(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("restock.fxml"));
-        loader.setControllerFactory(controllerClass -> new restockController(vm));
-        root = loader.load();
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+
+        if (vm.getSlotList().size() > 0) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("restock.fxml"));
+            loader.setControllerFactory(controllerClass -> new restockController(vm));
+            root = loader.load();
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }
+        else
+        {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Information");
+            alert.setHeaderText("No items found!");
+            alert.setContentText("Please create some items first");
+            alert.show();
+        }
+
     }
 
     public void initRemove(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("remove.fxml"));
-        loader.setControllerFactory(controllerClass -> new removeController(vm));
-        root = loader.load();
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+
+        if (vm.getSlotList().size() > 0)
+        {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("remove.fxml"));
+            loader.setControllerFactory(controllerClass -> new removeController(vm));
+            root = loader.load();
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }
+        else
+        {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Information");
+            alert.setHeaderText("No items found!");
+            alert.setContentText("Please create some items first");
+            alert.show();
+        }
+
     }
 
     public void initBalance(ActionEvent event) throws IOException {
@@ -89,24 +115,49 @@ public class maintenanceController {
     }
 
     public void initChange(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("change.fxml"));
-        loader.setControllerFactory(controllerClass -> new changeController(vm));
-        root = loader.load();
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+
+        if (vm.getSlotList().size() > 0)
+        {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("change.fxml"));
+            loader.setControllerFactory(controllerClass -> new changeController(vm));
+            root = loader.load();
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }
+        else
+        {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Information");
+            alert.setHeaderText("No items found!");
+            alert.setContentText("Please create some items first");
+            alert.show();
+        }
+
     }
 
 
     public void initDisplay(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("display.fxml"));
-        loader.setControllerFactory(controllerClass -> new displayController(vm));
-        root = loader.load();
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+
+        if (vm.getSlotList().size() > 0)
+        {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("display.fxml"));
+            loader.setControllerFactory(controllerClass -> new displayController(vm));
+            root = loader.load();
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }
+        else
+        {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Information");
+            alert.setHeaderText("No items found!");
+            alert.setContentText("Please create some items first");
+            alert.show();
+        }
     }
 
     public void exit(ActionEvent event) throws IOException {
