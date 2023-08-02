@@ -85,6 +85,11 @@ public class Slot
         return ITEM_LIST.size() == 0;
     }
 
+    /**
+     * This method gets the item in the slot
+     *
+     * @return the item of the slot
+     */
     public Item getItem()
     {
         return ITEM;

@@ -11,8 +11,8 @@ import java.util.ArrayList;
  */
 public class RegularVendingMachine {
     protected String name; // name of the vending machine
-    protected int numSlots; // number of slots of the vending machine
-    protected int numCapacity;
+    protected int numSlots; // maximum slots of the vending machine
+    protected int numCapacity; // total capacity of the vending machine
     protected final ArrayList<Slot> SLOT_LIST; // list of slots of the vending machine
     protected final ArrayList<Transaction> TRANSACTION_LIST; // list of transactions of the vending machine
     protected Register register; // array of change in multiple denominations
