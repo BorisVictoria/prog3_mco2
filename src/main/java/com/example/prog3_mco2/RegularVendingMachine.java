@@ -1,3 +1,7 @@
+package com.example.prog3_mco2;
+
+import java.util.ArrayList;
+
 
 /**
  * This class represents a vending machine and its associated features.
@@ -5,10 +9,6 @@
  * @author Katipunan Miguel Delos Reyes
  * @author Boris Victoria
  */
-package com.example.prog3_mco2;
-
-import java.util.ArrayList;
-
 public class RegularVendingMachine {
     protected String name; // name of the vending machine
     protected int numSlots; // number of slots of the vending machine
@@ -21,7 +21,9 @@ public class RegularVendingMachine {
     /**
      * Constructor for objects of class RegularVendingMachine
      *
-     * @param name the name of the vending machine
+     * @param name  the name of the vending machine
+     * @param numSlots  the total slots of the vending machine
+     * @param numCapacity  the total capacity of the vending machine
      */
     public RegularVendingMachine(String name, int numSlots, int numCapacity) {
         this.name = name;
@@ -34,6 +36,14 @@ public class RegularVendingMachine {
 
     }
 
+
+    /**
+     * This method calculates the change of the item
+     *
+     * @param slotIndex the slot index of the item to calculate the change for
+     *
+     * @return null if the change cannot be calculated, an arraylist of bills otherwise
+     */
     public ArrayList<ArrayList<Bill>> dispenseChange(int slotIndex)
     {
         int totalChange;
@@ -118,12 +128,13 @@ public class RegularVendingMachine {
 
         return change;
     }
+    
     /**
-     * This method dispenses an item from the vending machine and calculates for the change
+     * This method dispenses an item from the vending machine
      *
      * @param slotIndex the slot index of the item to be dispensed
      *
-     * @return true if the item was dispensed, false if the item was not dispensed
+     * @return null if the item was dispensed, an arraylist of bills for the change otherwise
      */
     public ArrayList<ArrayList<Bill>> dispenseItem(int slotIndex)
     {
@@ -277,11 +288,21 @@ public class RegularVendingMachine {
         return inserted;
     }
 
+    /**
+     * This method returns the total number of slots of the vending machine
+     *
+     * @return the total number of slots of the vending machine
+     */
     public int getNumSlots()
     {
         return numSlots;
     }
 
+    /**
+     * This method returns the total capacity of the vending machine
+     *
+     * @return the total capacity of the vending machine
+     */
     public int getNumCapacity()
     {
         return numCapacity;
@@ -297,6 +318,11 @@ public class RegularVendingMachine {
         return SLOT_LIST;
     }
 
+    /**
+     * This method returns the list of transactions in the vending machine
+     *
+     * @return list of transactions of the vending machine
+     */
     public ArrayList<Transaction> getTransactionList()
     {
         return TRANSACTION_LIST;

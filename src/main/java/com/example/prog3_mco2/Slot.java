@@ -1,13 +1,13 @@
+package com.example.prog3_mco2;
+
+import java.util.ArrayList;
+
 /**
  * This class represents a slot in a vending machine
  *
  * @author Katipunan Miguel Delos Reyes
  * @author Boris Victoria
  */
-package com.example.prog3_mco2;
-
-import java.util.ArrayList;
-
 public class Slot
 {
     private final String SLOT_NAME; // name of the slot
@@ -197,6 +197,12 @@ public class Slot
             return true;
         }
     }
+
+    /**
+     * This method returns the name of the item in the slot for gui purposes
+     *
+     * @return the name of the item in the slot
+     */
     public String toString()
     {
         return ITEM.getName();

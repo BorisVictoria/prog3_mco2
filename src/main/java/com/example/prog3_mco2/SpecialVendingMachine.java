@@ -2,21 +2,34 @@ package com.example.prog3_mco2;
 
 import java.util.ArrayList;
 
+/**
+ * This class represents a special vending machine that can dispense special items
+ *
+ * @author Katipunan Miguel Delos Reyes
+ * @author Boris Victoria
+ */
 public class SpecialVendingMachine extends RegularVendingMachine
 {
 
     /**
-     * Constructor for objects of class RegularVendingMachine
+     * Constructor for objects of class SpecialVendingMachine
      *
-     * @param name        the name of the vending machine
-     * @param numSlots
-     * @param numCapacity
+     * @param name  the name of the vending machine
+     * @param numSlots  the total slots of the vending machine
+     * @param numCapacity  the total capacity of the vending machine
      */
     public SpecialVendingMachine(String name, int numSlots, int numCapacity)
     {
         super(name, numSlots, numCapacity);
     }
 
+    /**
+     * This method calculates the change of the item
+     *
+     * @param itemList  the array of items to calculate the change for
+     *
+     * @return null if the change cannot be calculated, an arraylist of bills otherwise
+     */
     public ArrayList<ArrayList<Bill>> dispenseSpecialChange(ArrayList<Item> itemList)
     {
         int totalChange;
@@ -108,6 +121,13 @@ public class SpecialVendingMachine extends RegularVendingMachine
         return change;
     }
 
+    /**
+     * This method dispenses a special item from the vending machine
+     *
+     * @param itemList the list of items that composes the special item to be dispensed
+     *
+     * @return null if the item was dispensed, an arraylist of bills for the change otherwise
+     */
     public ArrayList<ArrayList<Bill>> dispenseSpecialItem(ArrayList<Item> itemList)
     {
 
@@ -152,14 +172,14 @@ public class SpecialVendingMachine extends RegularVendingMachine
 
     }
     /**
-     * This method stocks a new item to the vending machine
+     * This method stocks a new base to the vending machine
      *
-     * @param name the name of the item to be stocked
-     * @param price the price of the to be stocked
-     * @param description the description of the item to be stocked
-     * @param calories the calories of the item to be stocked
+     * @param name the name of the base to be stocked
+     * @param price the price of the base to be stocked
+     * @param description the description of the base to be stocked
+     * @param calories the calories of the base to be stocked
      *
-     * @return true if the item was added, false if the item was not added
+     * @return true if the base was added, false if the base was not added
      */
     public boolean stockBase(String name, int price, String description, int calories)
     {
@@ -184,14 +204,14 @@ public class SpecialVendingMachine extends RegularVendingMachine
     }
 
     /**
-     * This method stocks a new item to the vending machine
+     * This method stocks a new addon to the vending machine
      *
-     * @param name the name of the item to be stocked
-     * @param price the price of the to be stocked
-     * @param description the description of the item to be stocked
-     * @param calories the calories of the item to be stocked
+     * @param name the name of the addon to be stocked
+     * @param price the price of the addon to be stocked
+     * @param description the description of the addon to be stocked
+     * @param calories the calories of the addon to be stocked
      *
-     * @return true if the item was added, false if the item was not added
+     * @return true if the addon was added, false if the addon was not added
      */
     public boolean stockAddon(String name, int price, String description, int calories)
     {

@@ -1,11 +1,11 @@
+package com.example.prog3_mco2;
+
 /**
  * This class represents an item in a vending machine
  *
  * @author Katipunan Miguel Delos Reyes
  * @author Boris Victoria
  */
-package com.example.prog3_mco2;
-
 public class Item
 {
 
@@ -35,11 +35,11 @@ public class Item
      *
      * @return the name of the item
      */
-
     public String getName()
     {
         return ITEM_NAME;
     }
+
     /**
      * This method gets the price of the item
      *
@@ -49,6 +49,7 @@ public class Item
     {
         return price;
     }
+
     /**
      * This method gets the description of the item
      *
@@ -58,6 +59,7 @@ public class Item
     {
         return description;
     }
+
     /**
      * This method gets the calories of the item
      *
@@ -67,6 +69,7 @@ public class Item
     {
         return calories;
     }
+
     /**
      * This method changes the price of the item
      *
@@ -76,6 +79,7 @@ public class Item
     {
         this.price = price;
     }
+
     /**
      * This method changes the description of the item
      *

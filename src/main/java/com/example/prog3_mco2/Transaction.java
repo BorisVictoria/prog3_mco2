@@ -1,11 +1,11 @@
+package com.example.prog3_mco2;
+
 /**
  * This class represents transactions in a vending machine
  *
  * @author Katipunan Miguel Delos Reyes
  * @author Boris Victoria
  */
-package com.example.prog3_mco2;
-
 public class Transaction
 {
     private final String ITEM_NAME; // name of the item
