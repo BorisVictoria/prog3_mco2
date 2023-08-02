@@ -156,18 +156,26 @@ public class specialController implements Initializable
 
     public void choiceList3()
     {
+        String base = itemList.get(itemList.size()-1).getName();
+        String addons = "";
+
+        for (int i = 0; i < listview1.getItems().size(); i++)
+        {
+            addons = addons.concat(" " + listview2.getItems().get(i) + " " + listview1.getItems().get(i) + ",");
+        }
+
         lbl1.setText("");
         lbl2.setText("");
         lbl3.setText("");
         lbl4.setText("");
         lbl5.setText("");
         lbl6.setText("");
-        lbl7.setText("Name:");
-        lbl8.setText("Price:");
-        lbl9.setText("Calories:");
-        lbl10.setText("Quantity:");
-        lbl11.setText("Description:");
-        lbl12.setText("Type:");
+        lbl7.setText("Turning on item replicator...Done!");
+        lbl8.setText("Assembling molecular structure of " +base + "...Done!");
+        lbl9.setText("Powering up addon synthesizer...Done!");
+        lbl10.setText("Topping with" + addons + "..Done!");
+        lbl11.setText("Adding finishing touches...Done!");
+        lbl12.setText("Your item is ready!");
     }
 
 
