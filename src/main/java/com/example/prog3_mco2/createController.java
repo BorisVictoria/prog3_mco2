@@ -50,7 +50,7 @@ public class createController
             numSlots = Integer.parseInt(numSlotsField.getText());
             numCapacity = Integer.parseInt(numCapacityField.getText());
 
-            if (numSlots < 1 || numCapacity < 1)
+            if (numSlots < 8 || numCapacity < 10)
                 throw new Exception();
 
             vm = new RegularVendingMachine(name, numSlots, numCapacity);
@@ -88,7 +88,7 @@ public class createController
             numSlots = Integer.parseInt(numSlotsField.getText());
             numCapacity = Integer.parseInt(numCapacityField.getText());
 
-            if (numSlots < 1 || numCapacity < 1)
+            if (numSlots < 8 || numCapacity < 10)
                 throw new Exception();
 
             vm = new SpecialVendingMachine(name, numSlots, numCapacity);

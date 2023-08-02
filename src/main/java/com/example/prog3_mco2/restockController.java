@@ -58,7 +58,7 @@ public class restockController implements Initializable {
 
         for (int i = 0; i < vm.getSlotList().size(); i++)
         {
-            if (choiceBox.getItems().get(i).equals(name)) {
+            if (vm.getSlotList().get(i).getName().equals(name)) {
                 if (!vm.restock(i, qty))
                 {
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -84,7 +84,7 @@ public class restockController implements Initializable {
         String name = choiceBox.getValue();
 
         for (int i = 0; i < vm.getSlotList().size(); i++) {
-            if (choiceBox.getItems().get(i).equals(name))
+            if (vm.getSlotList().get(i).getName().equals(name))
             {
                 lbl1.setText(vm.getSlotList().get(i).getName());
                 lbl2.setText(Integer.toString(vm.getSlotList().get(i).getItemPrice()));

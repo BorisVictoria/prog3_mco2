@@ -141,19 +141,14 @@ public class displayController implements Initializable
 
             for (int i = 0; i < vm.getSlotList().size(); i++)
             {
-                if (slotIndex[i] > 0)
-                {
-
-                    a1.getItems().add(vm.getSlotList().get(i).getName());
-                    a2.getItems().add(vm.getSlotList().get(i).getClass().getSimpleName());
-                    a3.getItems().add(vm.getSlotList().get(i).getItemPrice());
-                    a4.getItems().add(vm.getSlotList().get(i).getItemQuantity() + slotIndex[i]);
-                    a5.getItems().add(vm.getSlotList().get(i).getItemQuantity());
-                    a6.getItems().add(slotIndex[i]);
-                    a7.getItems().add(totalSales[i]);
-                    total += totalSales[i];
-                }
-
+                a1.getItems().add(vm.getSlotList().get(i).getName());
+                a2.getItems().add(vm.getSlotList().get(i).getClass().getSimpleName());
+                a3.getItems().add(vm.getSlotList().get(i).getItemPrice());
+                a4.getItems().add(vm.getSlotList().get(i).getItemQuantity() + slotIndex[i]);
+                a5.getItems().add(vm.getSlotList().get(i).getItemQuantity());
+                a6.getItems().add(slotIndex[i]);
+                a7.getItems().add(totalSales[i]);
+                total += totalSales[i];
             }
 
             lbl1.setText(String.valueOf(total));

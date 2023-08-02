@@ -38,6 +38,7 @@ public class RegularVendingMachine {
     {
         int totalChange;
         ArrayList<ArrayList<Bill>> change;
+        Register total;
         int temp;
 
         // checks if total inserted is less than the price of the item
@@ -46,6 +47,10 @@ public class RegularVendingMachine {
 
         // calculates the total change
         totalChange = inserted.getTotal() - SLOT_LIST.get(slotIndex).getItemPrice();
+        total = new Register();
+        total.addMoney(register.getDenominations());
+        total.addMoney(inserted.getDenominations());
+
         change = new ArrayList<ArrayList<Bill>>();
         for (int i = 0; i < 9; i++)
         {
@@ -53,55 +58,55 @@ public class RegularVendingMachine {
         }
         temp = totalChange;
 
-        for (int i = 0; i < Math.min(temp / 1000, register.getDenominations().get(8).size()); i++)
+        for (int i = 0; i < Math.min(temp / 1000, total.getDenominations().get(8).size()); i++)
         {
             change.get(8).add(new Bill(1000));
         }
         temp -= change.get(8).size() * 1000;
 
-        for (int i = 0; i < Math.min(temp / 500, register.getDenominations().get(7).size()); i++)
+        for (int i = 0; i < Math.min(temp / 500, total.getDenominations().get(7).size()); i++)
         {
             change.get(7).add(new Bill(500));
         }
         temp -= change.get(7).size() * 500;
 
-        for (int i = 0; i < Math.min(temp / 200, register.getDenominations().get(6).size()); i++)
+        for (int i = 0; i < Math.min(temp / 200, total.getDenominations().get(6).size()); i++)
         {
             change.get(6).add(new Bill(200));
         }
         temp -= change.get(6).size() * 200;
 
-        for (int i = 0; i < Math.min(temp / 100, register.getDenominations().get(5).size()); i++)
+        for (int i = 0; i < Math.min(temp / 100, total.getDenominations().get(5).size()); i++)
         {
             change.get(5).add(new Bill(100));
         }
         temp -= change.get(5).size() * 100;
 
-        for (int i = 0; i < Math.min(temp / 50, register.getDenominations().get(4).size()); i++)
+        for (int i = 0; i < Math.min(temp / 50, total.getDenominations().get(4).size()); i++)
         {
             change.get(4).add(new Bill(50));
         }
         temp -= change.get(4).size() * 50;
 
-        for (int i = 0; i < Math.min(temp / 20, register.getDenominations().get(3).size()); i++)
+        for (int i = 0; i < Math.min(temp / 20, total.getDenominations().get(3).size()); i++)
         {
             change.get(3).add(new Bill(20));
         }
         temp -= change.get(3).size() * 20;
 
-        for (int i = 0; i < Math.min(temp / 10, register.getDenominations().get(2).size()); i++)
+        for (int i = 0; i < Math.min(temp / 10, total.getDenominations().get(2).size()); i++)
         {
             change.get(2).add(new Bill(10));
         }
         temp -= change.get(2).size() * 10;
 
-        for (int i = 0; i < Math.min(temp / 5, register.getDenominations().get(1).size()); i++)
+        for (int i = 0; i < Math.min(temp / 5, total.getDenominations().get(1).size()); i++)
         {
             change.get(1).add(new Bill(5));
         }
         temp -= change.get(1).size() * 5;
 
-        for (int i = 0; i < Math.min(temp, register.getDenominations().get(0).size()); i++)
+        for (int i = 0; i < Math.min(temp, total.getDenominations().get(0).size()); i++)
         {
             change.get(0).add(new Bill(1));
         }
@@ -133,8 +138,8 @@ public class RegularVendingMachine {
         TRANSACTION_LIST.add(new Transaction(SLOT_LIST.get(slotIndex).getName(), SLOT_LIST.get(slotIndex).getItemPrice(), slotIndex));
         SLOT_LIST.get(slotIndex).removeItem();
 
-        register.removeMoney(change);
         register.addMoney(inserted.getDenominations());
+        register.removeMoney(change);
         inserted.removeAll();
 
         return change;
@@ -181,6 +186,7 @@ public class RegularVendingMachine {
     public void remove(int slotIndex)
     {
         SLOT_LIST.remove(slotIndex);
+        TRANSACTION_LIST.clear();
     }
 
     /**
@@ -292,16 +298,6 @@ public class RegularVendingMachine {
     }
 
     public ArrayList<Transaction> getTransactionList()
-    {
-        return TRANSACTION_LIST;
-    }
-
-
-    /**
-     * This method displays the items sold and the total sales for each item
-     *
-     */
-    public ArrayList<Transaction> getTransactions()
     {
         return TRANSACTION_LIST;
     }

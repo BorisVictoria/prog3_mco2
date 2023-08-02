@@ -54,7 +54,7 @@ public class removeController implements Initializable {
 
         for (int i = 0; i < vm.getSlotList().size(); i++)
         {
-            if (choiceBox.getItems().get(i).equals(name))
+            if (vm.getSlotList().get(i).getName().equals(name))
             {
                 vm.remove(i);
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -62,6 +62,11 @@ public class removeController implements Initializable {
                 alert.setHeaderText("Item removed!");
                 alert.setContentText("Please click OK to continue");
                 alert.show();
+                choiceBox.getItems().removeAll();
+                for (int j = 0; j < vm.getSlotList().size(); j++)
+                    choiceBox.getItems().add(vm.getSlotList().get(j).toString());
+
+                choiceBox.getSelectionModel().selectFirst();
                 choiceList();
             }
         }
@@ -79,7 +84,7 @@ public class removeController implements Initializable {
 
         for (int i = 0; i < vm.getSlotList().size(); i++)
         {
-            if (choiceBox.getItems().get(i).equals(name))
+            if (vm.getSlotList().get(i).getName().equals(name))
             {
                 lbl1.setText(vm.getSlotList().get(i).getName());
                 lbl2.setText(Integer.toString(vm.getSlotList().get(i).getItemPrice()));

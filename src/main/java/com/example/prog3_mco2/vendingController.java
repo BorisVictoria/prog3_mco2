@@ -68,7 +68,7 @@ public class vendingController implements Initializable
 
         for (int i = 0; i < vm.getSlotList().size(); i++)
         {
-            if (choiceBox.getItems().get(i).equals(name))
+            if (vm.getSlotList().get(i).getName().equals(name))
             {
                 int temp = vm.getInserted().getTotal();
                 change = vm.dispenseItem(i);
@@ -229,7 +229,6 @@ public class vendingController implements Initializable
         choiceList();
     }
 
-
     public void list(ActionEvent event)
     {
         choiceList();
@@ -240,7 +239,7 @@ public class vendingController implements Initializable
         String name = choiceBox.getValue();
 
         for (int i = 0; i < vm.getSlotList().size(); i++) {
-            if (choiceBox.getItems().get(i).equals(name))
+            if (vm.getSlotList().get(i).getName().equals(name))
             {
                 lbl1.setText(vm.getSlotList().get(i).getName());
                 lbl2.setText(Integer.toString(vm.getSlotList().get(i).getItemPrice()));
@@ -256,7 +255,7 @@ public class vendingController implements Initializable
     public void initSpecial(ActionEvent event) throws IOException
     {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("special.fxml"));
-        loader.setControllerFactory(controllerClass -> new specialController(vm));
+        loader.setControllerFactory(controllerClass -> new specialController((SpecialVendingMachine) vm));
         root = loader.load();
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
@@ -266,6 +265,7 @@ public class vendingController implements Initializable
 
     public void exit(ActionEvent event) throws IOException
     {
+        vm.getInserted().removeAll();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("test.fxml"));
         loader.setControllerFactory(controllerClass -> new testController(vm));
         root = loader.load();
@@ -275,18 +275,24 @@ public class vendingController implements Initializable
         stage.show();
     }
 
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
         for (int i = 0; i < vm.getSlotList().size(); i++)
-            choiceBox.getItems().add(vm.getSlotList().get(i).toString());
+        {
+            if (!(vm.getSlotList().get(i).getItem() instanceof Addon))
+            {
+                choiceBox.getItems().add(vm.getSlotList().get(i).toString());
+            }
+        }
 
         choiceBox.getSelectionModel().selectFirst();
         choiceList();
 
-        if (vm instanceof RegularVendingMachine)
-            btn1.setVisible(false);
+        btn1.setVisible(false);
+
+        if (vm instanceof SpecialVendingMachine)
+            btn1.setVisible(true);
     }
 
 }

@@ -190,10 +190,13 @@ public class stockController implements Initializable
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
-        if (vm instanceof RegularVendingMachine)
+        btn1.setVisible(false);
+        btn2.setVisible(false);
+
+        if (vm instanceof SpecialVendingMachine)
         {
-            btn1.setVisible(false);
-            btn2.setVisible(false);
+            btn1.setVisible(true);
+            btn2.setVisible(true);
         }
     }
 }
