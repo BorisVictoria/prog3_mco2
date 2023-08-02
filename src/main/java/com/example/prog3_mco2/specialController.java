@@ -246,65 +246,72 @@ public class specialController implements Initializable
     }
 
 
-    public void dispense(ActionEvent event) throws IOException
-    {
+    public void dispense(ActionEvent event) throws IOException {
 
         String name = choiceBox1.getValue();
+        boolean present = false;
 
-        for (int i = 0; i < vm.getSlotList().size(); i++)
-        {
-            if (vm.getSlotList().get(i).getName().equals(name))
-            {
+        for (int i = 0; i < vm.getSlotList().size(); i++) {
+            if (vm.getSlotList().get(i).getName().equals(name)) {
                 itemList.add(vm.getSlotList().get(i).getItem());
+                present = true;
             }
         }
 
-        int temp = vm.getInserted().getTotal();
-        change = vm.dispenseSpecialItem(itemList);
-        if (change != null)
+        if (present)
         {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Information");
-            alert.setHeaderText("Special Item Dispensed!");
-            String str1 = "";
-            str1 = str1.concat("Transaction Summary \n");
-            str1 = str1.concat("Items: \n\n");
+            int temp = vm.getInserted().getTotal();
+            change = vm.dispenseSpecialItem(itemList);
+            if (change != null) {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Information");
+                alert.setHeaderText("Special Item Dispensed!");
+                String str1 = "";
+                str1 = str1.concat("Transaction Summary \n");
+                str1 = str1.concat("Items: \n\n");
 
-            str1 = str1.concat(itemList.get(itemList.size()-1).getName() + " x1\n" );
+                str1 = str1.concat(itemList.get(itemList.size() - 1).getName() + " x1\n");
 
-            for (int i = 0; i < listview1.getItems().size(); i++)
-            {
-                str1 = str1.concat(listview1.getItems().get(i) + " x" + listview2.getItems().get(i) + "\n");
+                for (int i = 0; i < listview1.getItems().size(); i++) {
+                    str1 = str1.concat(listview1.getItems().get(i) + " x" + listview2.getItems().get(i) + "\n");
+                }
+                str1 = str1.concat("\n");
+                str1 = str1.concat("Cash: " + temp + "\n");
+                str1 = str1.concat("\nChange: \n");
+
+                if (change.get(0).size() > 0) str1 = str1.concat("1 Peso x" + change.get(0).size() + "\n");
+                if (change.get(1).size() > 0) str1 = str1.concat("5 Peso x" + change.get(1).size() + "\n");
+                if (change.get(2).size() > 0) str1 = str1.concat("10 Peso x" + change.get(2).size() + "\n");
+                if (change.get(3).size() > 0) str1 = str1.concat("20 Peso x" + change.get(3).size() + "\n");
+                if (change.get(4).size() > 0) str1 = str1.concat("50 Peso x" + change.get(4).size() + "\n");
+                if (change.get(5).size() > 0) str1 = str1.concat("100 Peso x" + change.get(5).size() + "\n");
+                if (change.get(6).size() > 0) str1 = str1.concat("200 Peso x" + change.get(6).size() + "\n");
+                if (change.get(7).size() > 0) str1 = str1.concat("500 Peso x" + change.get(7).size() + "\n");
+                if (change.get(8).size() > 0) str1 = str1.concat("1000 Peso x" + change.get(8).size() + "\n");
+                alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
+                alert.setContentText(str1);
+                alert.show();
+                choiceList3();
+                itemList.clear();
+
+            } else {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Information");
+                alert.setHeaderText("Transaction Error!");
+                alert.setContentText("Please try again");
+                alert.show();
+                choiceList1();
             }
-            str1 = str1.concat("\n");
-            str1 = str1.concat("Cash: " + temp + "\n");
-            str1 = str1.concat("\nChange: \n");
-
-            if (change.get(0).size() > 0)  str1 = str1.concat("1 Peso x" + change.get(0).size() + "\n");
-            if (change.get(1).size() > 0)  str1 = str1.concat("5 Peso x" + change.get(1).size() + "\n");
-            if (change.get(2).size() > 0)  str1 = str1.concat("10 Peso x" + change.get(2).size() + "\n");
-            if (change.get(3).size() > 0)  str1 = str1.concat("20 Peso x" + change.get(3).size() + "\n");
-            if (change.get(4).size() > 0)  str1 = str1.concat("50 Peso x" + change.get(4).size() + "\n");
-            if (change.get(5).size() > 0)  str1 = str1.concat("100 Peso x" + change.get(5).size() + "\n");
-            if (change.get(6).size() > 0)  str1 = str1.concat("200 Peso x" + change.get(6).size() + "\n");
-            if (change.get(7).size() > 0)  str1 = str1.concat("500 Peso x" + change.get(7).size() + "\n");
-            if (change.get(8).size() > 0)  str1 = str1.concat("1000 Peso x" + change.get(8).size() + "\n");
-            alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
-            alert.setContentText(str1);
-            alert.show();
-            choiceList3();
-            itemList.clear();
-
         }
         else
         {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Information");
-            alert.setHeaderText("Transaction Error!");
-            alert.setContentText("Please try again");
+            alert.setHeaderText("No Base Found!");
+            alert.setContentText("Please create a base first");
             alert.show();
-            choiceList1();
         }
+
 
     }
 
