@@ -276,6 +276,14 @@ public class specialController implements Initializable
                     str1 = str1.concat(listview1.getItems().get(i) + " x" + listview2.getItems().get(i) + "\n");
                 }
                 str1 = str1.concat("\n");
+
+                int totalCalories = 0;
+
+                for (int i = 0; i < itemList.size(); i++)
+                {
+                    totalCalories += itemList.get(i).getCalories();
+                }
+                str1 = str1.concat("Calories: " + totalCalories + "\n");
                 str1 = str1.concat("Cash: " + temp + "\n");
                 str1 = str1.concat("\nChange: \n");
 
