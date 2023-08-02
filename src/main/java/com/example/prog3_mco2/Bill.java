@@ -8,13 +8,23 @@ package com.example.prog3_mco2;
  */
 public class Bill
 {
-    int value;
+    int value; // The value of the bill
 
+    /**
+     * Constructor for the Bill class
+     *
+     * @param value The value of the bill
+     */
     public Bill(int value)
     {
         this.value = value;
     }
 
+    /**
+     * Getter for the value of the bill
+     *
+     * @return The value of the bill
+     */
     public int getValue()
     {
         return value;

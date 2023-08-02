@@ -10,9 +10,13 @@ import java.util.ArrayList;
  */
 public class Register
 {
-    ArrayList<ArrayList<Bill>> bills;
-    int total;
+    private ArrayList<ArrayList<Bill>> bills; // The outer arraylist are the denominations, the inner arrayList are the bills
+    private int total; // The total amount of money in the register
 
+    /**
+     * Constructor for the register
+     *
+     */
     public Register()
     {
         bills = new ArrayList<ArrayList<Bill>>();
@@ -25,8 +29,12 @@ public class Register
 
     }
 
-    public void addMoney(ArrayList<ArrayList<Bill>> deposit)
-    {
+    /**
+     * Adds money to the register
+     *
+     * @param deposit  the denominations to be deposited
+     */
+    public void addMoney(ArrayList<ArrayList<Bill>> deposit) {
 
         for (int i = 0; i < deposit.get(0).size(); i++)
         {
@@ -79,13 +87,18 @@ public class Register
         }
     }
 
+    /**
+     * Removes the selected amount of money from the register
+     *
+     * @param withdraw the money to be withdrawn
+     * @return true if the money was removed, false if not
+     */
     public boolean removeMoney(ArrayList<ArrayList<Bill>> withdraw)
     {
 
         for (int i = 0; i < 9; i++)
         {
-            money[i] -= withdraw[i];
-            if (money[i] < 0)
+            if (withdraw.get(i).size() > bills.get(i).size())
                 return false;
         }
 
@@ -98,7 +111,7 @@ public class Register
         }
 
         total = 0;
-        for (int i : new int[]{money[0], money[1] * 5, money[2] * 10, money[3] * 20, money[4] * 50, money[5] * 100, money[6] * 200, money[7] * 500, money[8] * 1000})
+        for (int i : new int[]{bills.get(0).size(), bills.get(1).size() * 5, bills.get(2).size() * 10, bills.get(3).size() * 20, bills.get(4).size() * 50, bills.get(5).size() * 100, bills.get(6).size() * 200, bills.get(7).size() * 500, bills.get(8).size() * 1000})
         {
             total += i;
         }
@@ -107,21 +120,33 @@ public class Register
 
     }
 
+    /**
+     * Removes all money from the register
+     *
+     */
     public void removeAll()
     {
         for (int i = 0; i < 9; i++)
         {
-            money[i] = 0;
+            bills.get(i).clear();
         }
-
         total = 0;
     }
 
-    public int[] getDenominations()
+    /**
+     * Returns the bills in the register
+     * @return bills
+     */
+    public ArrayList<ArrayList<Bill>> getDenominations()
     {
-        return money;
+        return bills;
     }
 
+
+    /**
+     * Returns the total amount of money in the register
+     * @return total
+     */
     public int getTotal()
     {
         return total;
