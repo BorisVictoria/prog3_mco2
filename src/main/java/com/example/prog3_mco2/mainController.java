@@ -1,5 +1,6 @@
 package com.example.prog3_mco2;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -59,7 +60,11 @@ public class mainController
             alert.show();
         }
 
+    }
 
+    public void exit(ActionEvent event) throws IOException
+    {
+        Platform.exit();
     }
 
 }
