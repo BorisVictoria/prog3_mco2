@@ -5,7 +5,6 @@ import java.util.ArrayList;
 public class SpecialVendingMachine extends RegularVendingMachine
 {
 
-
     /**
      * Constructor for objects of class RegularVendingMachine
      *

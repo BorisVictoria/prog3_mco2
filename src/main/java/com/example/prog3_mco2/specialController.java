@@ -94,6 +94,7 @@ public class specialController implements Initializable
     public specialController(SpecialVendingMachine vm)
     {
         this.vm = vm;
+        itemList = new ArrayList<Item>();
     }
 
     public void list1(ActionEvent event) throws IOException
@@ -119,6 +120,13 @@ public class specialController implements Initializable
                 lbl4.setText(Integer.toString(vm.getSlotList().get(i).getItemQuantity()));
                 lbl5.setText(vm.getSlotList().get(i).getItemDescription());
                 lbl6.setText(vm.getSlotList().get(i).getItem().getClass().getSimpleName());
+                lbl7.setText("Name:");
+                lbl8.setText("Price:");
+                lbl9.setText("Calories:");
+                lbl10.setText("Quantity:");
+                lbl11.setText("Description:");
+                lbl12.setText("Type:");
+
             }
         }
     }
@@ -136,9 +144,32 @@ public class specialController implements Initializable
                 lbl4.setText(Integer.toString(vm.getSlotList().get(i).getItemQuantity()));
                 lbl5.setText(vm.getSlotList().get(i).getItemDescription());
                 lbl6.setText(vm.getSlotList().get(i).getItem().getClass().getSimpleName());
+                lbl7.setText("Name:");
+                lbl8.setText("Price:");
+                lbl9.setText("Calories:");
+                lbl10.setText("Quantity:");
+                lbl11.setText("Description:");
+                lbl12.setText("Type:");
             }
         }
     }
+
+    public void choiceList3()
+    {
+        lbl1.setText("");
+        lbl2.setText("");
+        lbl3.setText("");
+        lbl4.setText("");
+        lbl5.setText("");
+        lbl6.setText("");
+        lbl7.setText("Name:");
+        lbl8.setText("Price:");
+        lbl9.setText("Calories:");
+        lbl10.setText("Quantity:");
+        lbl11.setText("Description:");
+        lbl12.setText("Type:");
+    }
+
 
     public void add(ActionEvent event)
     {
@@ -162,9 +193,9 @@ public class specialController implements Initializable
 
                     for (int k = 0; k < listview1.getItems().size(); k++)
                     {
-                        if (listview1.getItems().get(i).equals(name))
+                        if (listview1.getItems().get(k).equals(name))
                         {
-                            listview2.getItems().set(i, listview2.getItems().get(i) + spn1.getValue());
+                            listview2.getItems().set(k, listview2.getItems().get(k) + spn1.getValue());
                             newItem = false;
                         }
 
@@ -179,7 +210,7 @@ public class specialController implements Initializable
 
                     for (int j = 0; j < spn1.getValue(); j++)
                     {
-                        itemList.add(vm.getSlotList().get(i).getItem());
+                        itemList.add(vm.getSlotList().get(j).getItem());
                     }
                 }
 
@@ -226,6 +257,8 @@ public class specialController implements Initializable
             str1 = str1.concat("Transaction Summary \n");
             str1 = str1.concat("Items: \n\n");
 
+            str1 = str1.concat(itemList.get(itemList.size()-1).getName() + " x1\n" );
+
             for (int i = 0; i < listview1.getItems().size(); i++)
             {
                 str1 = str1.concat(listview1.getItems().get(i) + " x" + listview2.getItems().get(i) + "\n");
@@ -246,6 +279,7 @@ public class specialController implements Initializable
             alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
             alert.setContentText(str1);
             alert.show();
+            itemList.clear();
             choiceList1();
         }
         else
