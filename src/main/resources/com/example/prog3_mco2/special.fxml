@@ -12,33 +12,33 @@
                 <Font name="Segoe UI Semilight" size="36.0" />
             </font>
         </Label>
-        <Button fx:id="btn1" layoutX="483.0" layoutY="556.0" mnemonicParsing="false" onAction="#exit" prefHeight="39.0" prefWidth="192.0" text="Exit" textAlignment="CENTER">
+        <Button fx:id="btn1" layoutX="436.0" layoutY="575.0" mnemonicParsing="false" onAction="#exit" prefHeight="39.0" prefWidth="198.0" text="Exit" textAlignment="CENTER">
             <font>
                 <Font name="Segoe UI Semilight" size="16.0" />
             </font></Button>
-        <Label alignment="CENTER" layoutX="119.0" layoutY="405.0" prefHeight="25.0" prefWidth="175.0" text="Select Base">
+        <Label alignment="CENTER" layoutX="102.0" layoutY="396.0" prefHeight="25.0" prefWidth="175.0" text="Select Base">
             <font>
                 <Font name="Segoe UI Semilight" size="16.0" />
             </font>
         </Label>
-        <ChoiceBox fx:id="choiceBox1" layoutX="119.0" layoutY="435.0" onAction="#list1" prefHeight="25.0" prefWidth="175.0" />
-        <Region layoutX="96.0" layoutY="149.0" prefHeight="218.0" prefWidth="234.0" style="-fx-border-color: black;" />
-        <Label fx:id="lbl7" layoutX="108.0" layoutY="162.0" prefWidth="45.0" text="Name:">
+        <ChoiceBox fx:id="choiceBox1" layoutX="102.0" layoutY="426.0" onAction="#list1" prefHeight="25.0" prefWidth="175.0" />
+        <Region layoutX="96.0" layoutY="149.0" prefHeight="218.0" prefWidth="411.0" style="-fx-border-color: black;" />
+        <Label fx:id="lbl7" layoutX="108.0" layoutY="162.0" prefHeight="25.0" prefWidth="383.0" text="Name:">
             <font>
                 <Font name="Segoe UI Semilight" size="16.0" />
             </font>
         </Label>
-        <Label fx:id="lbl9" layoutX="108.0" layoutY="212.0" text="Calories:">
+        <Label fx:id="lbl9" layoutX="108.0" layoutY="212.0" prefHeight="25.0" prefWidth="383.0" text="Calories:">
             <font>
                 <Font name="Segoe UI Semilight" size="16.0" />
             </font>
         </Label>
-        <Label fx:id="lbl8" layoutX="108.0" layoutY="187.0" text="Price:">
+        <Label fx:id="lbl8" layoutX="108.0" layoutY="187.0" prefHeight="25.0" prefWidth="383.0" text="Price:">
             <font>
                 <Font name="Segoe UI Semilight" size="16.0" />
             </font>
         </Label>
-        <Label fx:id="lbl10" layoutX="108.0" layoutY="237.0" text="Quantity:">
+        <Label fx:id="lbl10" layoutX="108.0" layoutY="237.0" prefHeight="25.0" prefWidth="383.0" text="Quantity:">
             <font>
                 <Font name="Segoe UI Semilight" size="16.0" />
             </font>
@@ -46,13 +46,13 @@
         <Line endX="550.0" layoutX="191.0" layoutY="125.0" startX="-106.0" />
         <Line endX="550.0" layoutX="191.0" layoutY="57.0" startX="-106.0" />
         <Line endX="550.0" layoutX="195.0" layoutY="627.0" startX="-106.0" />
-        <Label alignment="CENTER" layoutX="342.0" layoutY="477.0" prefHeight="25.0" prefWidth="175.0" text="Quantity">
+        <Label alignment="CENTER" layoutX="330.0" layoutY="476.0" prefHeight="25.0" prefWidth="175.0" text="Quantity">
             <font>
                 <Font name="Segoe UI Semilight" size="16.0" />
             </font>
         </Label>
-        <Spinner fx:id="spn1" layoutX="342.0" layoutY="503.0" prefHeight="25.0" prefWidth="175.0" />
-      <Label fx:id="lbl11" layoutX="108.0" layoutY="264.0" text="Description:">
+        <Spinner fx:id="spn1" layoutX="330.0" layoutY="506.0" prefHeight="25.0" prefWidth="175.0" />
+      <Label fx:id="lbl11" layoutX="108.0" layoutY="264.0" prefHeight="25.0" prefWidth="383.0" text="Description:">
          <font>
             <Font name="Segoe UI Semilight" size="16.0" />
          </font>
@@ -62,24 +62,24 @@
             <Font name="Segoe UI Semilight" size="16.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="343.0" layoutY="402.0" prefHeight="25.0" prefWidth="175.0" text="Select Addons">
+      <Label alignment="CENTER" layoutX="103.0" layoutY="476.0" prefHeight="25.0" prefWidth="175.0" text="Select Addons">
          <font>
             <Font name="Segoe UI Semilight" size="16.0" />
          </font>
       </Label>
-      <ChoiceBox fx:id="choiceBox2" layoutX="342.0" layoutY="435.0" onAction="#list2" prefHeight="25.0" prefWidth="175.0" />
-      <Button fx:id="btn2" layoutX="208.0" layoutY="556.0" mnemonicParsing="false" onAction="#dispense" prefHeight="39.0" prefWidth="175.0" text="Dispense" textAlignment="CENTER">
+      <ChoiceBox fx:id="choiceBox2" layoutX="102.0" layoutY="506.0" onAction="#list2" prefHeight="25.0" prefWidth="175.0" />
+      <Button fx:id="btn2" layoutX="179.0" layoutY="575.0" mnemonicParsing="false" onAction="#dispense" prefHeight="39.0" prefWidth="198.0" text="Dispense" textAlignment="CENTER">
          <font>
             <Font name="Segoe UI Semilight" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="btn4" layoutX="535.0" layoutY="429.0" mnemonicParsing="false" onAction="#add" prefHeight="39.0" prefWidth="192.0" text="Add" textAlignment="CENTER">
+      <Button fx:id="btn4" layoutX="547.0" layoutY="492.0" mnemonicParsing="false" onAction="#add" prefHeight="39.0" prefWidth="192.0" text="Add" textAlignment="CENTER">
          <font>
             <Font name="Segoe UI Semilight" size="16.0" />
          </font>
       </Button>
-      <ListView fx:id="listview1" layoutX="339.0" layoutY="203.0" prefHeight="164.0" prefWidth="91.0" />
-      <Label fx:id="lbl12" layoutX="108.0" layoutY="338.0" text="Type:">
+      <ListView fx:id="listview1" layoutX="546.0" layoutY="194.0" prefHeight="124.0" prefWidth="96.0" />
+      <Label fx:id="lbl12" layoutX="108.0" layoutY="338.0" prefHeight="25.0" prefWidth="383.0" text="Type:">
          <font>
             <Font name="Segoe UI Semilight" size="16.0" />
          </font>
@@ -109,23 +109,23 @@
             <Font name="Segoe UI Semilight" size="16.0" />
          </font>
       </Label>
-      <Button fx:id="btn3" layoutX="535.0" layoutY="266.0" mnemonicParsing="false" onAction="#remove" prefHeight="39.0" prefWidth="192.0" text="Remove" textAlignment="CENTER">
+      <Button fx:id="btn3" layoutX="546.0" layoutY="331.0" mnemonicParsing="false" onAction="#remove" prefHeight="39.0" prefWidth="192.0" text="Remove" textAlignment="CENTER">
          <font>
             <Font name="Segoe UI Semilight" size="16.0" />
          </font>
       </Button>
-      <ListView fx:id="listview2" layoutX="430.0" layoutY="203.0" prefHeight="164.0" prefWidth="91.0" />
-      <Label alignment="CENTER" layoutX="339.0" layoutY="175.0" prefHeight="25.0" prefWidth="91.0" text="Name">
+      <ListView fx:id="listview2" layoutX="642.0" layoutY="194.0" prefHeight="124.0" prefWidth="96.0" />
+      <Label alignment="CENTER" layoutX="551.0" layoutY="166.0" prefHeight="25.0" prefWidth="91.0" text="Name">
          <font>
             <Font name="Segoe UI Semilight" size="16.0" />
          </font>
       </Label>
-      <Label fx:id="lbl101" alignment="CENTER" layoutX="430.0" layoutY="175.0" prefHeight="25.0" prefWidth="91.0" text="Quantity">
+      <Label fx:id="lbl101" alignment="CENTER" layoutX="642.0" layoutY="166.0" prefHeight="25.0" prefWidth="91.0" text="Quantity">
          <font>
             <Font name="Segoe UI Semilight" size="16.0" />
          </font>
       </Label>
-      <Label fx:id="lbl51" alignment="CENTER" layoutX="339.0" layoutY="150.0" prefHeight="25.0" prefWidth="181.0" text="Addons">
+      <Label fx:id="lbl51" alignment="CENTER" layoutX="552.0" layoutY="142.0" prefHeight="25.0" prefWidth="181.0" text="Addons">
          <font>
             <Font name="Segoe UI Semilight" size="16.0" />
          </font>

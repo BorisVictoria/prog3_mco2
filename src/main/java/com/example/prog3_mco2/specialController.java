@@ -218,7 +218,7 @@ public class specialController implements Initializable
 
                     for (int j = 0; j < spn1.getValue(); j++)
                     {
-                        itemList.add(vm.getSlotList().get(j).getItem());
+                        itemList.add(vm.getSlotList().get(i).getItem());
                     }
                 }
 
@@ -287,8 +287,9 @@ public class specialController implements Initializable
             alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
             alert.setContentText(str1);
             alert.show();
+            choiceList3();
             itemList.clear();
-            choiceList1();
+
         }
         else
         {

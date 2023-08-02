@@ -126,34 +126,30 @@ public class displayController implements Initializable
 
     public void display()
     {
-        if (vm.getTransactionList().size() > 0) // If there are transactions
+
+        int[] slotIndex = new int[vm.getSlotList().size()]; // Array to store the number of items sold for each slot
+        int[] totalSales = new int[vm.getSlotList().size()]; // Array to store the total sales for each slot
+        int total = 0;
+
+        for (int i = 0; i < vm.getTransactionList().size(); i++)
         {
-
-            int[] slotIndex = new int[vm.getSlotList().size()]; // Array to store the number of items sold for each slot
-            int[] totalSales = new int[vm.getSlotList().size()]; // Array to store the total sales for each slot
-            int total = 0;
-
-            for (int i = 0; i < vm.getTransactionList().size(); i++)
-            {
-                slotIndex[vm.getTransactionList().get(i).getSlotIndex()]++;
-                totalSales[vm.getTransactionList().get(i).getSlotIndex()] += vm.getTransactionList().get(i).getPrice();
-            }
-
-            for (int i = 0; i < vm.getSlotList().size(); i++)
-            {
-                a1.getItems().add(vm.getSlotList().get(i).getName());
-                a2.getItems().add(vm.getSlotList().get(i).getClass().getSimpleName());
-                a3.getItems().add(vm.getSlotList().get(i).getItemPrice());
-                a4.getItems().add(vm.getSlotList().get(i).getItemQuantity() + slotIndex[i]);
-                a5.getItems().add(vm.getSlotList().get(i).getItemQuantity());
-                a6.getItems().add(slotIndex[i]);
-                a7.getItems().add(totalSales[i]);
-                total += totalSales[i];
-            }
-
-            lbl1.setText(String.valueOf(total));
-
+            slotIndex[vm.getTransactionList().get(i).getSlotIndex()]++;
+            totalSales[vm.getTransactionList().get(i).getSlotIndex()] += vm.getTransactionList().get(i).getPrice();
         }
+
+        for (int i = 0; i < vm.getSlotList().size(); i++)
+        {
+            a1.getItems().add(vm.getSlotList().get(i).getName());
+            a2.getItems().add(vm.getSlotList().get(i).getItem().getClass().getSimpleName());
+            a3.getItems().add(vm.getSlotList().get(i).getItemPrice());
+            a4.getItems().add(vm.getSlotList().get(i).getItemQuantity() + slotIndex[i]);
+            a5.getItems().add(vm.getSlotList().get(i).getItemQuantity());
+            a6.getItems().add(slotIndex[i]);
+            a7.getItems().add(totalSales[i]);
+            total += totalSales[i];
+        }
+
+        lbl1.setText(String.valueOf(total));
 
         a1.setSelectionModel(new NoSelectionModel<String>());
         a2.setSelectionModel(new NoSelectionModel<String>());
