@@ -36,53 +36,43 @@ public class Register
      */
     public void addMoney(ArrayList<ArrayList<Bill>> deposit) {
 
-        for (int i = 0; i < deposit.get(0).size(); i++)
-        {
+        for (int i = 0; i < deposit.get(0).size(); i++) {
             bills.get(0).add(new Bill(1));
         }
 
-        for (int i = 0; i < deposit.get(1).size(); i++)
-        {
+        for (int i = 0; i < deposit.get(1).size(); i++) {
             bills.get(1).add(new Bill(5));
         }
 
-        for (int i = 0; i < deposit.get(2).size(); i++)
-        {
+        for (int i = 0; i < deposit.get(2).size(); i++) {
             bills.get(2).add(new Bill(10));
         }
 
-        for (int i = 0; i < deposit.get(3).size(); i++)
-        {
+        for (int i = 0; i < deposit.get(3).size(); i++) {
             bills.get(3).add(new Bill(20));
         }
 
-        for (int i = 0; i < deposit.get(4).size(); i++)
-        {
+        for (int i = 0; i < deposit.get(4).size(); i++) {
             bills.get(4).add(new Bill(50));
         }
 
-        for (int i = 0; i < deposit.get(5).size(); i++)
-        {
+        for (int i = 0; i < deposit.get(5).size(); i++) {
             bills.get(5).add(new Bill(100));
         }
 
-        for (int i = 0; i < deposit.get(6).size(); i++)
-        {
+        for (int i = 0; i < deposit.get(6).size(); i++) {
             bills.get(6).add(new Bill(200));
         }
 
-        for (int i = 0; i < deposit.get(7).size(); i++)
-        {
+        for (int i = 0; i < deposit.get(7).size(); i++) {
             bills.get(7).add(new Bill(500));
         }
-        for (int i = 0; i < deposit.get(8).size(); i++)
-        {
+        for (int i = 0; i < deposit.get(8).size(); i++) {
             bills.get(8).add(new Bill(1000));
         }
 
         total = 0;
-        for (int i : new int[]{bills.get(0).size(), bills.get(1).size() * 5, bills.get(2).size() * 10, bills.get(3).size() * 20, bills.get(4).size() * 50, bills.get(5).size() * 100, bills.get(6).size() * 200, bills.get(7).size() * 500, bills.get(8).size() * 1000})
-        {
+        for (int i : new int[]{bills.get(0).size(), bills.get(1).size() * 5, bills.get(2).size() * 10, bills.get(3).size() * 20, bills.get(4).size() * 50, bills.get(5).size() * 100, bills.get(6).size() * 200, bills.get(7).size() * 500, bills.get(8).size() * 1000}) {
             total += i;
         }
     }
