@@ -170,11 +170,16 @@ public class specialController implements Initializable
         lbl4.setText("");
         lbl5.setText("");
         lbl6.setText("");
-        lbl7.setText("Turning on item replicator...Done!");
-        lbl8.setText("Assembling molecular structure of " +base + "...Done!");
-        lbl9.setText("Powering up addon synthesizer...Done!");
-        lbl10.setText("Topping with" + addons + "..Done!");
-        lbl11.setText("Adding finishing touches...Done!");
+        lbl7.setText("Turning on item replicator...");
+        lbl8.setText("Creating atomic structure of " +base + "...");
+        lbl9.setText("Powering up addon synthesizer...");
+        if (listview1.getItems().size() > 0)
+        {
+            lbl10.setText("Topping with" + addons + "...");
+        }
+        else
+            lbl10.setText("No toppings :(");
+        lbl11.setText("Adding finishing touches...");
         lbl12.setText("Your item is ready!");
     }
 

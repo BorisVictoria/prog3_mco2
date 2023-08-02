@@ -38,7 +38,7 @@
                 <Font name="Segoe UI Semilight" size="16.0" />
             </font>
         </Label>
-        <Label fx:id="lbl10" layoutX="108.0" layoutY="237.0" prefHeight="25.0" prefWidth="383.0" text="Quantity:">
+        <Label fx:id="lbl10" alignment="TOP_LEFT" layoutX="108.0" layoutY="237.0" prefHeight="93.0" prefWidth="383.0" text="Quantity:">
             <font>
                 <Font name="Segoe UI Semilight" size="16.0" />
             </font>
